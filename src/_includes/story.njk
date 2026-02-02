@@ -5,9 +5,9 @@ layout: layout.njk
 <main id="story-detail" class="section">
     <div class="container">
         
-        <p class="back-link"><a href="/stories/">&larr; Back to Story Archive</a></p>
+        <p class="back-link"><a href="{{'/stories| url'}}/">&larr; Back to Story Archive</a></p>
 
-        <header class="story-header text-center">
+        <header class="text-center story-header">
             <h1 class="text-secondary-dark">{{ title }}</h1>
             <img src="{{ image}}" alt="{{ title }} - Survivor Story" class="story-detail-img">
         </header>
@@ -16,8 +16,8 @@ layout: layout.njk
             {{ content | safe }}
         </article>
 
-        <div class="text-center mt-5">
-            <a href="/donate/" class="cta-btn primary-cta">Support This Warrior: Donate Now</a>
+        <div class="mt-5 text-center">
+            <a href="{{'/donate/'| url}}" class="cta-btn primary-cta">Support This Warrior: Donate Now</a>
         </div>
 
     </div>

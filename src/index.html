@@ -15,8 +15,8 @@ layout: 'layout.njk'
                 We provide life-saving education, early detection services, and crucial financial support to ensure no one faces this journey alone.
             </p>
             <div class="flex flex-wrap justify-start gap-4">
-                <a href="/donate/" class="cta-btn primary-cta">Donate Now</a>
-                <a href="/stories/" class="bg-white border-2 border-pink-100 cta-btn text-warrior-dark hover:bg-pink-50">Read Stories</a>
+                <a href="{{ '/donate/' | url }}" class="cta-btn primary-cta">Donate Now</a>
+                <a href="{{'/stories/'| url }}" class="bg-white border-2 border-pink-100 cta-btn text-warrior-dark hover:bg-pink-50">Read Stories</a>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@ layout: 'layout.njk'
                 <div class="text-left">
                     <h3 class="mb-2 font-serif text-2xl font-bold text-warrior-dark">Amie Corr</h3>
                     <p class="mb-4 text-sm italic leading-relaxed text-slate-600">Automotive engineer and dedicated visionary behind BCW Gambia.</p>
-                    <a href="/about/" class="text-xs font-bold tracking-widest uppercase transition text-warrior-pink hover:text-warrior-deep">View Bio &rarr;</a>
+                    <a href="{{'/about/'|url }}" class="text-xs font-bold tracking-widest uppercase transition text-warrior-pink hover:text-warrior-deep">View Bio &rarr;</a>
                 </div>
             </div>
             <!-- tida -->
@@ -45,7 +45,7 @@ layout: 'layout.njk'
                 <div class="text-left">
                     <h3 class="mb-2 font-serif text-2xl font-bold text-warrior-dark">Tida Njie</h3>
                     <p class="mb-4 text-sm italic leading-relaxed text-slate-600">A dedicated advocate driving community-led support for women and families.</p>
-                    <a href="/about/" class="text-xs font-bold tracking-widest uppercase transition text-warrior-pink hover:text-warrior-deep">View Bio &rarr;</a>
+                    <a href="{{'/about/'| url}}" class="text-xs font-bold tracking-widest uppercase transition text-warrior-pink hover:text-warrior-deep">View Bio &rarr;</a>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@ layout: 'layout.njk'
                 <h2 class="mb-4 font-serif text-4xl font-bold text-slate-900">Hear From Our Warriors</h2>
                 <p class="max-w-lg text-lg text-slate-500">Resilience and hope from the women we walk beside every day.</p>
             </div>
-            <a href="/stories/" class="hidden font-bold underline transition-all md:inline-block text-warrior-dark hover:text-warrior-pink decoration-pink-200 decoration-2 underline-offset-8">
+            <a href="{{'/stories/'| url }}" class="hidden font-bold underline transition-all md:inline-block text-warrior-dark hover:text-warrior-pink decoration-pink-200 decoration-2 underline-offset-8">
                 View All Stories
             </a>
         </div>
@@ -94,7 +94,7 @@ layout: 'layout.njk'
             <p class="max-w-2xl mx-auto mb-12 text-lg leading-relaxed text-slate-400">
                 Your support fuels medical checkups, emotional support groups, and life-saving awareness campaigns across The Gambia.
             </p>
-            <a href="/donate/" class="px-10 py-5 text-lg cta-btn primary-cta">Make a Donation Today</a>
+            <a href="{{ '/donate/' | url }}" class="px-10 py-5 text-lg cta-btn primary-cta">Make a Donation Today</a>
         </div>
         <div class="absolute -top-24 -left-24 w-80 h-80 bg-warrior-pink rounded-full blur-[120px] opacity-20"></div>
     </div>
