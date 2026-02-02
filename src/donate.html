@@ -4,50 +4,50 @@ layout: "layout.njk"
 description: "Your donation directly supports breast cancer warriors in The Gambia, covering treatment, screening, and emotional support."
 ---
 
-<section class="py-16 bg-warrior-soft min-h-screen">
-    <div class="max-w-7xl mx-auto px-6">
+<section class="min-h-screen py-16 bg-warrior-soft">
+    <div class="px-6 mx-auto max-w-7xl">
         
         <!-- MAIN HEADER -->
         <div class="mb-16 text-center lg:text-left">
-            <h1 class="text-6xl md:text-8xl font-serif font-bold text-warrior-dark leading-none tracking-tight">
+            <h1 class="font-serif text-6xl font-bold leading-none tracking-tight md:text-8xl text-warrior-dark">
                 Support a <br><span class="italic">Warrior.</span>
             </h1>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="grid items-start grid-cols-1 gap-12 lg:grid-cols-12">
             
             <!-- LEFT COLUMN: LOCAL DONATIONS -->
-            <div class="lg:col-span-8 space-y-8">
+            <div class="space-y-8 lg:col-span-8">
                 <div class="bg-white p-8 md:p-12 rounded-[3.5rem] shadow-xl border-2 border-warrior-pink">
                     <div class="flex items-center gap-4 mb-10">
                         <span class="text-4xl">🇬🇲</span>
-                        <h2 class="text-3xl font-serif font-bold text-slate-900">Local Payment Options</h2>
+                        <h2 class="font-serif text-3xl font-bold text-slate-900">Local Payment Options</h2>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
                         
                         <!-- Bank Transfer Card -->
                         <div class="bg-warrior-soft/50 p-8 rounded-[2rem] border-2 border-warrior-pink/20 flex flex-col justify-between">
                             <div>
-                                <h3 class="text-xl font-black text-warrior-deep uppercase tracking-tight mb-4 border-b-2 border-warrior-pink/30 pb-2">Bank Transfer</h3>
-                                <p class="text-slate-700 font-bold mb-6">Please use <span class="text-warrior-dark">"BCW Donation"</span> as your reference.</p>
+                                <h3 class="pb-2 mb-4 text-xl font-black tracking-tight uppercase border-b-2 text-warrior-deep border-warrior-pink/30">Bank Transfer</h3>
+                                <p class="mb-6 font-bold text-slate-700">Please use <span class="text-warrior-dark">"BCW Donation"</span> as your reference.</p>
                                 
-                                <div class="space-y-4 mb-8">
+                                <div class="mb-8 space-y-4">
                                     <div>
-                                        <p class="text-xs font-black uppercase text-slate-400 tracking-widest">Bank Name</p>
+                                        <p class="text-xs font-black tracking-widest uppercase text-slate-400">Bank Name</p>
                                         <p class="text-lg font-bold text-slate-900">GTBank</p>
                                     </div>
                                     <div>
-                                        <p class="text-xs font-black uppercase text-slate-400 tracking-widest">Account Name</p>
+                                        <p class="text-xs font-black tracking-widest uppercase text-slate-400">Account Name</p>
                                         <p class="text-lg font-bold text-slate-900">Breast Cancer Warriors</p>
                                     </div>
                                     <div>
-                                        <p class="text-xs font-black uppercase text-slate-400 tracking-widest">Account Number</p>
-                                        <p class="text-xl font-black text-warrior-dark break-all" id="gtbank-number">5110333000160033</p>
+                                        <p class="text-xs font-black tracking-widest uppercase text-slate-400">Account Number</p>
+                                        <p class="text-xl font-black break-all text-warrior-dark" id="gtbank-number">5110333000160033</p>
                                     </div>
                                 </div>
                             </div>
-                            <button class="copy-btn w-full bg-white border-2 border-warrior-pink text-warrior-dark font-black py-4 rounded-2xl hover:bg-warrior-pink hover:text-white transition-all active:scale-95" data-copy-target="gtbank-number">
+                            <button class="w-full py-4 font-black transition-all bg-white border-2 copy-btn border-warrior-pink text-warrior-dark rounded-2xl hover:bg-warrior-pink hover:text-white active:scale-95" data-copy-target="gtbank-number">
                                 Copy Account No.
                             </button>
                         </div>
@@ -55,21 +55,21 @@ description: "Your donation directly supports breast cancer warriors in The Gamb
                         <!-- Mobile Money Card -->
                         <div class="bg-warrior-soft/50 p-8 rounded-[2rem] border-2 border-warrior-pink/20 flex flex-col justify-between">
                             <div>
-                                <h3 class="text-xl font-black text-warrior-deep uppercase tracking-tight mb-4 border-b-2 border-warrior-pink/30 pb-2">Mobile Money</h3>
-                                <p class="text-slate-700 font-bold mb-6">Africell or QCell. Funds are used instantly for warrior needs.</p>
+                                <h3 class="pb-2 mb-4 text-xl font-black tracking-tight uppercase border-b-2 text-warrior-deep border-warrior-pink/30">Mobile Money</h3>
+                                <p class="mb-6 font-bold text-slate-700">Africell or QCell. Funds are used instantly for warrior needs.</p>
                                 
-                                <div class="space-y-4 mb-8">
+                                <div class="mb-8 space-y-4">
                                     <div>
-                                        <p class="text-xs font-black uppercase text-slate-400 tracking-widest">Network</p>
+                                        <p class="text-xs font-black tracking-widest uppercase text-slate-400">Network</p>
                                         <p class="text-lg font-bold text-slate-900">Africell / QCell</p>
                                     </div>
                                     <div>
-                                        <p class="text-xs font-black uppercase text-slate-400 tracking-widest">Merchant Number</p>
+                                        <p class="text-xs font-black tracking-widest uppercase text-slate-400">Merchant Number</p>
                                         <p class="text-2xl font-black text-warrior-dark" id="africell-number">+220 380 4354</p>
                                     </div>
                                 </div>
                             </div>
-                            <button class="copy-btn w-full bg-white border-2 border-warrior-pink text-warrior-dark font-black py-4 rounded-2xl hover:bg-warrior-pink hover:text-white transition-all active:scale-95" data-copy-target="africell-number">
+                            <button class="w-full py-4 font-black transition-all bg-white border-2 copy-btn border-warrior-pink text-warrior-dark rounded-2xl hover:bg-warrior-pink hover:text-white active:scale-95" data-copy-target="africell-number">
                                 Copy Phone No.
                             </button>
                         </div>
@@ -79,23 +79,23 @@ description: "Your donation directly supports breast cancer warriors in The Gamb
             </div>
 
             <!-- RIGHT COLUMN: INTERNATIONAL + INFO -->
-            <div class="lg:col-span-4 space-y-8">
+            <div class="space-y-8 lg:col-span-4">
                 
                 <!-- International Status -->
                 <div class="bg-white p-8 rounded-[2.5rem] border-2 border-warrior-pink shadow-md">
                     <div class="flex items-center gap-3 mb-6">
                         <span class="text-3xl">🌍</span>
-                        <h2 class="text-xl font-black text-slate-900 uppercase tracking-tight">International</h2>
+                        <h2 class="text-xl font-black tracking-tight uppercase text-slate-900">International</h2>
                     </div>
-                    <p class="text-slate-600 font-bold leading-relaxed italic">
+                    <p class="italic font-bold leading-relaxed text-slate-600">
                         "We are currently finalizing our PayPal and Western Union details for secure international transfers. Thank you for your patience."
                     </p>
                 </div>
 
                 <!-- Trust/Transparency Card -->
                 <div class="bg-warrior-dark p-8 rounded-[2.5rem] text-white shadow-xl">
-                    <h3 class="text-2xl font-serif font-bold mb-4 italic">Your Impact</h3>
-                    <p class="text-pink-100 font-medium leading-relaxed mb-6">
+                    <h3 class="mb-4 font-serif text-2xl italic font-bold">Your Impact</h3>
+                    <p class="mb-6 font-medium leading-relaxed text-pink-100">
                         100% of your donation goes directly towards medical bills, transportation to clinics, and nutritional support for our warriors.
                     </p>
                     <div class="w-12 h-1 border-t-2 border-pink-300/30"></div>
