@@ -2,7 +2,7 @@ name: Deploy Eleventy to Pages
 
 on:
   push:
-    branches: ["main"] # Or whatever your default branch is
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -15,24 +15,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
+
       - name: Install dependencies
-        run: npm install
-      - name: Build Eleventy
-        run: npx @11ty/eleventy # This builds your site into _site
+        run: npm ci # 'npm ci' is faster and more reliable for builds
+
+      - name: Build Site
+        run: npm run build # This runs Tailwind AND Eleventy as defined in package.json
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./_site # Make sure this matches your 11ty output folder
+          path: ./_site
 
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
