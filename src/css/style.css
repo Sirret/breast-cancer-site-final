@@ -18,18 +18,7 @@
     @apply text-white bg-warrior-dark hover:bg-warrior-deep;
   }
 
-  /* NEW: Color logic for all images */
-  /* Full color by default for mobile/touch */
-  .grayscale-hover {
-    @apply transition-all duration-700 grayscale-0;
-  }
-
-  /* Apply grayscale effect only to desktop hover */
-  @media (min-width: 1024px) {
-    .grayscale-hover {
-      @apply grayscale hover:grayscale-0 hover:scale-105;
-    }
-  }
+ 
 }
 
 /* Hide all stories after the first 3 on the homepage */

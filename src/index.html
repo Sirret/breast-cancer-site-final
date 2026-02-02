@@ -32,7 +32,7 @@ layout: 'layout.njk'
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
             <!-- Amie -->
             <div class="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row gap-8 items-center border border-pink-100/50">
-                <img src="/assets/img/pictures/amie-profile.jpg" alt="Amie Corr" class="object-cover w-40 h-40 transition-all duration-500 shadow-inner rounded-2xl grayscale hover:grayscale-0"/>
+                <img src="/assets/img/pictures/amie-profile.jpg" alt="Amie Corr" class="object-cover w-40 h-40 transition-all duration-500 shadow-inner rounded-2xl "/>
                 <div class="text-left">
                     <h3 class="mb-2 font-serif text-2xl font-bold text-warrior-dark">Amie Corr</h3>
                     <p class="mb-4 text-sm italic leading-relaxed text-slate-600">Automotive engineer and dedicated visionary behind BCW Gambia.</p>
@@ -41,9 +41,9 @@ layout: 'layout.njk'
             </div>
             <!-- tida -->
             <div class="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row gap-8 items-center border border-pink-100/50">
-                <img src="/assets/img/pictures/tida-profile.jpg" alt="tida" class="object-cover w-40 h-40 transition-all duration-500 shadow-inner rounded-2xl grayscale hover:grayscale-0"/>
+                <img src="/assets/img/pictures/tida-profile.jpg" alt="tida" class="object-cover w-40 h-40 transition-all duration-500 shadow-inner rounded-2xl "/>
                 <div class="text-left">
-                    <h3 class="mb-2 font-serif text-2xl font-bold text-warrior-dark">Tida</h3>
+                    <h3 class="mb-2 font-serif text-2xl font-bold text-warrior-dark">Tida Njie</h3>
                     <p class="mb-4 text-sm italic leading-relaxed text-slate-600">A dedicated advocate driving community-led support for women and families.</p>
                     <a href="/about/" class="text-xs font-bold tracking-widest uppercase transition text-warrior-pink hover:text-warrior-deep">View Bio &rarr;</a>
                 </div>
@@ -68,20 +68,21 @@ layout: 'layout.njk'
 
         <!-- We added the 'home-story-grid' class here -->
         <div class="grid grid-cols-1 gap-10 home-story-grid md:grid-cols-3">
-            {% for story in stories %}
-                <article class="relative text-left bg-white group">
-                    <div class="aspect-[4/5] overflow-hidden rounded-[2.5rem] mb-6 shadow-xl shadow-pink-900/5">
-                        <img src="{{ story.image }}" alt="{{ story.title }}" class="object-cover w-full h-full transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105"/>
-                        <div class="absolute inset-0 flex items-end p-8 transition-opacity opacity-0 bg-gradient-to-t from-warrior-deep/80 via-transparent to-transparent group-hover:opacity-100">
-                            <a href="/stories/{{ story.link }}" class="font-bold tracking-tight text-white">Read Full Account &rarr;</a>
-                        </div>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold leading-snug transition-colors text-slate-900 group-hover:text-warrior-dark">
-                        {{ story.title }}
-                    </h3>
-                </article>
-            {% endfor %}
-        </div>
+    {% for story in stories %}
+        <article class="relative text-left bg-white group rounded-[2.5rem] overflow-hidden">
+            <div class="aspect-[4/5] overflow-hidden rounded-b-[2.5rem] mb-6 shadow-xl shadow-pink-900/5">
+                <img src="{{ story.image }}" alt="{{ story.title }}" class="object-cover w-full h-full transition-all duration-700 group-hover:scale-105"/>
+                
+                <div class="absolute inset-0 flex items-end p-8 transition-opacity opacity-0 bg-gradient-to-t from-warrior-deep/80 via-transparent to-transparent group-hover:opacity-100">
+                    <a href="/stories/{{ story.link }}" class="font-bold tracking-tight text-white">Read Full Account &rarr;</a>
+                </div>
+            </div>
+            <h3 class="px-4 font-serif text-xl font-bold leading-snug transition-colors text-slate-900 group-hover:text-warrior-dark">
+                {{ story.title }}
+            </h3>
+        </article>
+    {% endfor %}
+</div>
     </div>
 </section>
 
