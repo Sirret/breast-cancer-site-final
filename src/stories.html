@@ -36,8 +36,9 @@ layout: "layout.njk"
                         "{{ story.excerpt | truncate: 120 }}"
                     </p>
                     <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
-                        <a href="/stories/{{ story.link | slugify }}/" class="after:absolute after:inset-0">
-                            Read Full Story
+                            <a href="{{ '/stories/' | url }}{{ story.link | slugify }}/" 
+                            class="after:absolute after:inset-0">
+                                Read Full Story
                         </a>
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
