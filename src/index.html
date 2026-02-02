@@ -1,0 +1,100 @@
+--- 
+title: 'Breast Cancer Warriors: Hope & Support in The Gambia' 
+layout: 'layout.njk'
+---
+
+<!-- HERO SECTION -->
+<section id="hero" class="relative pt-32 pb-24 overflow-hidden bg-warrior-soft">
+    <div class="absolute top-0 right-0 -mt-20 -mr-20 rounded-full w-96 h-96 bg-warrior-soft blur-3xl opacity-60"></div>
+    <div class="relative z-10 px-6 mx-auto max-w-7xl">
+        <div class="max-w-3xl text-left">
+            <h1 class="mb-8 font-serif text-5xl font-bold leading-tight md:text-7xl text-slate-900">
+                Pioneering Breast <span class="italic underline text-warrior-dark decoration-pink-200">Cancer Care</span> & Support in The Gambia.
+            </h1>
+            <p class="max-w-2xl mb-10 text-xl leading-relaxed text-slate-600">
+                We provide life-saving education, early detection services, and crucial financial support to ensure no one faces this journey alone.
+            </p>
+            <div class="flex flex-wrap justify-start gap-4">
+                <a href="/donate/" class="cta-btn primary-cta">Donate Now</a>
+                <a href="/stories/" class="bg-white border-2 border-pink-100 cta-btn text-warrior-dark hover:bg-pink-50">Read Stories</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOUNDERS SECTION -->
+<section id="founders" class="py-24 bg-warrior-soft/50">
+    <div class="px-6 mx-auto max-w-7xl">
+        <div class="mb-16 text-center">
+            <h2 class="mb-4 font-serif text-4xl font-bold tracking-tight text-slate-900">Meet Our Founders</h2>
+            <div class="w-20 h-1.5 bg-warrior-pink mx-auto rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
+            <!-- Amie -->
+            <div class="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row gap-8 items-center border border-pink-100/50">
+                <img src="/assets/img/pictures/amie-profile.jpg" alt="Amie Corr" class="object-cover w-40 h-40 transition-all duration-500 shadow-inner rounded-2xl grayscale hover:grayscale-0"/>
+                <div class="text-left">
+                    <h3 class="mb-2 font-serif text-2xl font-bold text-warrior-dark">Amie Corr</h3>
+                    <p class="mb-4 text-sm italic leading-relaxed text-slate-600">Automotive engineer and dedicated visionary behind BCW Gambia.</p>
+                    <a href="/about/" class="text-xs font-bold tracking-widest uppercase transition text-warrior-pink hover:text-warrior-deep">View Bio &rarr;</a>
+                </div>
+            </div>
+            <!-- tida -->
+            <div class="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row gap-8 items-center border border-pink-100/50">
+                <img src="/assets/img/pictures/tida-profile.jpg" alt="tida" class="object-cover w-40 h-40 transition-all duration-500 shadow-inner rounded-2xl grayscale hover:grayscale-0"/>
+                <div class="text-left">
+                    <h3 class="mb-2 font-serif text-2xl font-bold text-warrior-dark">Tida</h3>
+                    <p class="mb-4 text-sm italic leading-relaxed text-slate-600">A dedicated advocate driving community-led support for women and families.</p>
+                    <a href="/about/" class="text-xs font-bold tracking-widest uppercase transition text-warrior-pink hover:text-warrior-deep">View Bio &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STORIES SECTION (FAIL-SAFE 3 STORY LIMIT) -->
+<!-- STORIES SECTION (CSS LIMIT) -->
+<section id="stories-teaser" class="py-24 bg-white">
+    <div class="px-6 mx-auto max-w-7xl">
+        <div class="flex flex-col items-end justify-between gap-6 mb-16 md:flex-row">
+            <div class="text-left">
+                <h2 class="mb-4 font-serif text-4xl font-bold text-slate-900">Hear From Our Warriors</h2>
+                <p class="max-w-lg text-lg text-slate-500">Resilience and hope from the women we walk beside every day.</p>
+            </div>
+            <a href="/stories/" class="hidden font-bold underline transition-all md:inline-block text-warrior-dark hover:text-warrior-pink decoration-pink-200 decoration-2 underline-offset-8">
+                View All Stories
+            </a>
+        </div>
+
+        <!-- We added the 'home-story-grid' class here -->
+        <div class="grid grid-cols-1 gap-10 home-story-grid md:grid-cols-3">
+            {% for story in stories %}
+                <article class="relative text-left bg-white group">
+                    <div class="aspect-[4/5] overflow-hidden rounded-[2.5rem] mb-6 shadow-xl shadow-pink-900/5">
+                        <img src="{{ story.image }}" alt="{{ story.title }}" class="object-cover w-full h-full transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105"/>
+                        <div class="absolute inset-0 flex items-end p-8 transition-opacity opacity-0 bg-gradient-to-t from-warrior-deep/80 via-transparent to-transparent group-hover:opacity-100">
+                            <a href="/stories/{{ story.link }}" class="font-bold tracking-tight text-white">Read Full Account &rarr;</a>
+                        </div>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold leading-snug transition-colors text-slate-900 group-hover:text-warrior-dark">
+                        {{ story.title }}
+                    </h3>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="mx-6 mb-24">
+    <div class="max-w-7xl mx-auto bg-slate-900 rounded-[3.5rem] p-12 md:p-20 text-center relative overflow-hidden">
+        <div class="relative z-10">
+            <h2 class="mb-8 font-serif text-4xl font-bold text-white md:text-6xl">Small Acts, <span class="italic text-warrior-pink">Big Impact.</span></h2>
+            <p class="max-w-2xl mx-auto mb-12 text-lg leading-relaxed text-slate-400">
+                Your support fuels medical checkups, emotional support groups, and life-saving awareness campaigns across The Gambia.
+            </p>
+            <a href="/donate/" class="px-10 py-5 text-lg cta-btn primary-cta">Make a Donation Today</a>
+        </div>
+        <div class="absolute -top-24 -left-24 w-80 h-80 bg-warrior-pink rounded-full blur-[120px] opacity-20"></div>
+    </div>
+</section>

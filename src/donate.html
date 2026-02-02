@@ -1,0 +1,136 @@
+---
+title: "Donate & Fund a Warrior's Treatment"
+layout: "layout.njk"
+description: "Your donation directly supports breast cancer warriors in The Gambia, covering treatment, screening, and emotional support."
+---
+
+<section class="py-16 bg-warrior-soft min-h-screen">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <!-- MAIN HEADER -->
+        <div class="mb-16 text-center lg:text-left">
+            <h1 class="text-6xl md:text-8xl font-serif font-bold text-warrior-dark leading-none tracking-tight">
+                Support a <br><span class="italic">Warrior.</span>
+            </h1>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <!-- LEFT COLUMN: LOCAL DONATIONS -->
+            <div class="lg:col-span-8 space-y-8">
+                <div class="bg-white p-8 md:p-12 rounded-[3.5rem] shadow-xl border-2 border-warrior-pink">
+                    <div class="flex items-center gap-4 mb-10">
+                        <span class="text-4xl">🇬🇲</span>
+                        <h2 class="text-3xl font-serif font-bold text-slate-900">Local Payment Options</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        
+                        <!-- Bank Transfer Card -->
+                        <div class="bg-warrior-soft/50 p-8 rounded-[2rem] border-2 border-warrior-pink/20 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-black text-warrior-deep uppercase tracking-tight mb-4 border-b-2 border-warrior-pink/30 pb-2">Bank Transfer</h3>
+                                <p class="text-slate-700 font-bold mb-6">Please use <span class="text-warrior-dark">"BCW Donation"</span> as your reference.</p>
+                                
+                                <div class="space-y-4 mb-8">
+                                    <div>
+                                        <p class="text-xs font-black uppercase text-slate-400 tracking-widest">Bank Name</p>
+                                        <p class="text-lg font-bold text-slate-900">GTBank</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-black uppercase text-slate-400 tracking-widest">Account Name</p>
+                                        <p class="text-lg font-bold text-slate-900">Breast Cancer Warriors</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-black uppercase text-slate-400 tracking-widest">Account Number</p>
+                                        <p class="text-xl font-black text-warrior-dark break-all" id="gtbank-number">5110333000160033</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="copy-btn w-full bg-white border-2 border-warrior-pink text-warrior-dark font-black py-4 rounded-2xl hover:bg-warrior-pink hover:text-white transition-all active:scale-95" data-copy-target="gtbank-number">
+                                Copy Account No.
+                            </button>
+                        </div>
+
+                        <!-- Mobile Money Card -->
+                        <div class="bg-warrior-soft/50 p-8 rounded-[2rem] border-2 border-warrior-pink/20 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-black text-warrior-deep uppercase tracking-tight mb-4 border-b-2 border-warrior-pink/30 pb-2">Mobile Money</h3>
+                                <p class="text-slate-700 font-bold mb-6">Africell or QCell. Funds are used instantly for warrior needs.</p>
+                                
+                                <div class="space-y-4 mb-8">
+                                    <div>
+                                        <p class="text-xs font-black uppercase text-slate-400 tracking-widest">Network</p>
+                                        <p class="text-lg font-bold text-slate-900">Africell / QCell</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-black uppercase text-slate-400 tracking-widest">Merchant Number</p>
+                                        <p class="text-2xl font-black text-warrior-dark" id="africell-number">+220 380 4354</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="copy-btn w-full bg-white border-2 border-warrior-pink text-warrior-dark font-black py-4 rounded-2xl hover:bg-warrior-pink hover:text-white transition-all active:scale-95" data-copy-target="africell-number">
+                                Copy Phone No.
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: INTERNATIONAL + INFO -->
+            <div class="lg:col-span-4 space-y-8">
+                
+                <!-- International Status -->
+                <div class="bg-white p-8 rounded-[2.5rem] border-2 border-warrior-pink shadow-md">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="text-3xl">🌍</span>
+                        <h2 class="text-xl font-black text-slate-900 uppercase tracking-tight">International</h2>
+                    </div>
+                    <p class="text-slate-600 font-bold leading-relaxed italic">
+                        "We are currently finalizing our PayPal and Western Union details for secure international transfers. Thank you for your patience."
+                    </p>
+                </div>
+
+                <!-- Trust/Transparency Card -->
+                <div class="bg-warrior-dark p-8 rounded-[2.5rem] text-white shadow-xl">
+                    <h3 class="text-2xl font-serif font-bold mb-4 italic">Your Impact</h3>
+                    <p class="text-pink-100 font-medium leading-relaxed mb-6">
+                        100% of your donation goes directly towards medical bills, transportation to clinics, and nutritional support for our warriors.
+                    </p>
+                    <div class="w-12 h-1 border-t-2 border-pink-300/30"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const copyButtons = document.querySelectorAll('.copy-btn');
+        copyButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-copy-target');
+                const textToCopy = document.getElementById(targetId).textContent.trim();
+                
+                const tempInput = document.createElement('input');
+                tempInput.value = textToCopy;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.classList.add('bg-warrior-dark', 'text-white');
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('bg-warrior-dark', 'text-white');
+                }, 2000);
+            });
+        });
+    });
+</script>

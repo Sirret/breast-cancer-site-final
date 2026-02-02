@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --color-warrior-pink: #ec4899;
+  --color-warrior-dark: #be185d;
+  --color-warrior-deep: #831843;
+  --color-warrior-soft: #fdf2f8;
+  
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer components {
+  .cta-btn {
+    @apply inline-block px-8 py-4 font-bold transition-all duration-300 rounded-full shadow-md;
+  }
+  .primary-cta {
+    @apply text-white bg-warrior-dark hover:bg-warrior-deep;
+  }
+
+  /* NEW: Color logic for all images */
+  /* Full color by default for mobile/touch */
+  .grayscale-hover {
+    @apply transition-all duration-700 grayscale-0;
+  }
+
+  /* Apply grayscale effect only to desktop hover */
+  @media (min-width: 1024px) {
+    .grayscale-hover {
+      @apply grayscale hover:grayscale-0 hover:scale-105;
+    }
+  }
+}
+
+/* Hide all stories after the first 3 on the homepage */
+.home-story-grid article:nth-child(n+4) {
+  display: none;
+}

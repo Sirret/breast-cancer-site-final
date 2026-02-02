@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survivor Stories: Our Warriors | Breast Cancer Warriors Gambia</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .nav-logo { height: 2.2rem; width: auto; object-fit: contain; }
+        @media (min-width: 768px) { .nav-logo { height: 2.8rem; } }
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        /* Mobile Menu Slide Animation */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+            display: block !important; /* Override 'hidden' for animation */
+        }
+        #mobile-menu.active {
+            max-height: 500px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased bg-white text-slate-900">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b nav-glass border-slate-100">
+        <div class="flex items-center justify-between h-20 px-6 mx-auto max-w-7xl">
+            <a href="/" class="flex items-center group">
+                <img src="/assets/img/b-c-w-logo.png" alt="Breast Cancer Warriors Gambia" class="transition-transform duration-300 nav-logo group-hover:scale-105">
+            </a>
+
+            <div class="items-center hidden gap-10 lg:flex">
+                <a href="/about/" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink">About</a>
+                <a href="/stories/" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink">Stories</a>
+                <a href="/contact/" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink">Contact</a>
+            </div>
+
+            <div class="items-center hidden md:flex">
+                <a href="/donate/" class="bg-warrior-pink text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg shadow-warrior-pink/20">
+                    Donate Now
+                </a>
+            </div>
+
+            <button id="menu-toggle" class="relative w-10 h-10 p-2 lg:hidden text-slate-900 focus:outline-none">
+                <div id="hamburger-icon" class="absolute inset-0 flex items-center justify-center transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </div>
+                <div id="close-icon" class="absolute inset-0 flex items-center justify-center transition-all duration-300 scale-0 opacity-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </div>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="bg-white lg:hidden">
+            <div class="flex flex-col p-8 space-y-6 text-center">
+                <a href="/about/" class="text-sm font-black tracking-widest uppercase text-slate-600">About</a>
+                <a href="/stories/" class="text-sm font-black tracking-widest uppercase text-slate-600">Stories</a>
+                <a href="/contact/" class="text-sm font-black tracking-widest uppercase text-slate-600">Contact</a>
+                <a href="/donate/" class="bg-warrior-pink text-white py-4 rounded-full text-[10px] font-black uppercase tracking-widest">Donate Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="min-h-screen">
+        
+<section class="pt-32 pb-16 bg-white border-b border-slate-50">
+    <div class="px-6 mx-auto text-center max-w-7xl">
+        <h1 class="mb-6 font-serif text-5xl font-bold leading-tight tracking-tighter md:text-6xl text-slate-900">
+            Survivor Stories
+        </h1>
+        <p class="max-w-2xl mx-auto text-lg font-medium leading-relaxed text-slate-600">
+            Find hope and strength in the personal journeys of breast cancer fighters and survivors across The Gambia.
+        </p>
+    </div>
+</section>
+
+<section class="py-24 bg-slate-50/50">
+    <div class="px-6 mx-auto max-w-7xl">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/adam-joof.jpg" alt="Adam Joof: Fighting It Together" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        Adam Joof: Fighting It Together
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        " 1 in 10 women will be diagnosed with breast cancer in her lifetime. Behind every number is mother, sister, or a frie..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/adam-joof-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/adama-fadiya-2.jpg" alt="Adama Fadiya: A Story of Survival" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        Adama Fadiya: A Story of Survival
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        "Even when my strength begins to fade, I find the courage to rise again with renewed hope..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/adama-fadiya-2-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/adama-fadiya.jpg" alt="Adama Fadiya: A New Kind of Courage" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        Adama Fadiya: A New Kind of Courage
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        "...it felt like my whole world collapsed.  It started with a small lump I almost ignored, followed by a strange..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/adama-fadiya-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/amie-corr-1.jpg" alt="Amie Corr: Fighting with a Smile" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        Amie Corr: Fighting with a Smile
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        "I Looked in the mirror and saw my breasts uneven, my hair a mess and my body feeling like an empty flesh..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/amie-corr-1-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/amie-corr-2.jpg" alt="Amie Corr: The Day I Was Diagnosed" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        Amie Corr: The Day I Was Diagnosed
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        " I pretended like everything was fine because everyone said, “We are with you and you'll be fine.” But..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/amie-corr-2-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/ebrima-o-ngum.jpg" alt="Ebrima O Ngum: Standing Together" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        Ebrima O Ngum: Standing Together
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        "To every breast cancer warrior, survivor, and fighter—your strength amazes, your courage inspires, and your resilienc..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/ebrima-o-ngum-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/aja-bintou-manneh-1.jpg" alt="Aja Bintou Manneh: A Quiet Victory" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        Aja Bintou Manneh: A Quiet Victory
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        "Some days, the pain feels endless—like a shadow that won't lift. But I choose to stand tall, not because it's easy, b..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/aja-bintou-manneh-1-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/ebee-ngum.jpg" alt="Ebee Ngum: We're In This Together" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        Ebee Ngum: We're In This Together
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        "“The day I was diagnosed with breast cancer”, Everything changed but so did the love, care, and support that followed..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/ebee-ngum-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/aja-bintou-manneh-2.jpg" alt="Aja Bintou Manneh: Don't Ignore the Signs" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        Aja Bintou Manneh: Don't Ignore the Signs
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        "“ i thought it was over , in my head it meant DEATH because that's all I ever heard about it. But..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/aja-bintou-manneh-2-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/awa-njie.jpg" alt="Awa Njie: Stronger Than This" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        Awa Njie: Stronger Than This
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        "Everything in my life changed in an instant. I became a shadow of who I used to be haunted by fear. Fear of..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/awa-njie-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/njie-tida.jpg" alt="Njie Tida: Stronger Than Anything" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        Njie Tida: Stronger Than Anything
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        "It is painful. It is scary. It is life-altering . And processing it looks different for everyone..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/njie-tida-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/njie-tida-2.jpg" alt="Njie Tida: A Frightening Roller-Coaster" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        Njie Tida: A Frightening Roller-Coaster
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        " Life changes drastically when you are diagnosed with breast cancer. Suddenly you go from a joyful experience about y..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/njie-tida-2-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/the-plug.jpg" alt="THEPLUG: Hope Lives On" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        THEPLUG: Hope Lives On
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        "To those fighting breast cancer, to the survivors who fought and won, and to the loved ones who stood beside them—you..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/the-plug-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/marrie-louise-mamo-jatta.jpg" alt="Marie Louise Mamo Jatta: Cancer Free" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        Marie Louise Mamo Jatta: Cancer Free
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        "I felt something in my breast and it pierced through my chest and the pain was persistent, my fears were rising and t..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/marrie-louise-mamo-jatta-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/jankey-njie-2.jpg" alt="Jankey Nije: Living a Full Life" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        Jankey Nije: Living a Full Life
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        "The goal is to live a full, productive life even with all that ambiguity..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/jankey-njie-2-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/jankey-njie.jpg" alt="Jankey Nije: Caregiving is a Mindset" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        Jankey Nije: Caregiving is a Mindset
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        "THE DAY I WAS DIAGNOSED WITH BREAST CANCER “ I used to believe caregiving was something you offered others; acts of l..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/jankey-njie-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
+                <div class="relative h-64 overflow-hidden bg-warrior-soft">
+                    <img src="/assets/img/stories/surahata-sanneh.jpg" alt="Surahata Sanneh: Together We Conquer" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
+                    <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
+                        Survivor Portrait
+                    </span>
+                </div>
+
+                <div class="flex flex-col flex-grow p-10">
+                    <h3 class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink">
+                        Surahata Sanneh: Together We Conquer
+                    </h3>
+                    <p class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600">
+                        "Breast cancer may leave its mark, but it will never define the strength of a warrior’s heart..."
+                    </p>
+                    <div class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link">
+                        <a href="/stories/surahata-sanneh-story/" class="after:absolute after:inset-0">
+                            Read Full Story
+                        </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </article>
+            
+
+        </div>
+    </div>
+</section>
+    </main>
+
+    <script>
+        const btn = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        const hamburger = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        btn.addEventListener('click', () => {
+            const isActive = menu.classList.toggle('active');
+            hamburger.classList.toggle('opacity-0', isActive);
+            hamburger.classList.toggle('scale-0', isActive);
+            closeIcon.classList.toggle('opacity-100', isActive);
+            closeIcon.classList.toggle('scale-100', isActive);
+        });
+    </script>
+</body>
+</html>
