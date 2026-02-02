@@ -2,11 +2,11 @@
   "name": "redo",
   "version": "1.0.0",
   "scripts": {
-  "css:build": "npx @tailwindcss/cli -i ./src/css/style.css -o ./_site/css/style.css",
-  "css:watch": "npx @tailwindcss/cli -i ./src/css/style.css -o ./_site/css/style.css --watch",
-  "11ty:watch": "npx @11ty/eleventy --serve",
+  "css:build": "tailwindcss -i ./src/css/style.css -o ./_site/css/style.css",
+  "css:watch": "tailwindcss -i ./src/css/style.css -o ./_site/css/style.css --watch",
+  "11ty:watch": "eleventy --serve",
   "start": "npm-run-all --parallel css:watch 11ty:watch",
-  "build": "npm-run-all css:build && npx @11ty/eleventy"
+  "build": "tailwindcss -i ./src/css/style.css -o ./_site/css/style.css && eleventy"
 },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
