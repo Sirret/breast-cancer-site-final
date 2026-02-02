@@ -33,7 +33,7 @@ eleventyComputed:
   <div class="max-w-3xl px-6 mx-auto">
 
     <div class="rounded-[2rem] overflow-hidden shadow-xl mb-16 border border-slate-100">
-      <img src="{{ story.image }}" alt="{{ story.title }}" class="w-full h-auto">
+      <img src="{{ story.image | url }} " alt="{{ story.title }}" class="w-full h-auto">
     </div>
 
     <div class="font-serif leading-relaxed prose prose-lg prose-slate text-slate-700 max-w-none prose-headings:text-slate-900 prose-headings:font-serif prose-p:mb-6 prose-blockquote:italic prose-blockquote:text-warrior-dark prose-blockquote:border-warrior-pink">

@@ -21,7 +21,7 @@ layout: "layout.njk"
             {% for story in stories %}
             <article class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full">
                 <div class="relative h-64 overflow-hidden bg-warrior-soft">
-                    <img src="{{ story.image }}" alt="{{ story.title }}" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
+                    <img src="{{ story.image | url }}" alt="{{ story.title }}" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110 grayscale-hover">
                     <div class="absolute inset-0 bg-gradient-to-t from-warrior-soft/40 to-transparent"></div>
                     <span class="absolute top-6 left-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm">
                         Survivor Portrait
