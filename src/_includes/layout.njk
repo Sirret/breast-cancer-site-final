@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} | Breast Cancer Warriors Gambia</title>
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
     <style>
         .nav-logo { height: 2.2rem; width: auto; object-fit: contain; }
@@ -24,17 +25,21 @@
             border-bottom: 1px solid #f1f5f9;
         }
     </style>
+    <script src="https://www.paypal.com/sdk/js?client-id={{ keys.paypal }}&currency=USD"></script>
+    <script src="https://cdn.modempay.com/sdk/v1/modempay.js"></script>
 </head>
 
 <body class="font-sans antialiased bg-white text-slate-900">
 
     <nav class="fixed top-0 left-0 right-0 z-50 border-b nav-glass border-slate-100">
         <div class="flex items-center justify-between h-20 px-6 mx-auto max-w-7xl">
+            
             <a href="{{ '/' | url }}" class="flex items-center group">
                 <img src="{{ '/assets/img/b-c-w-logo.png' | url }}" alt="Breast Cancer Warriors Gambia" class="transition-transform duration-300 nav-logo group-hover:scale-105">
             </a>
 
             <div class="items-center hidden gap-10 lg:flex">
+                <a href="{{ '/' | url }}" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink">Home</a>
                 <a href="{{ '/about/' | url }}" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink">About</a>
                 <a href="{{ '/stories/' | url }}" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink">Stories</a>
                 <a href="{{ '/what-we-do/' | url }}" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink">What we do</a>
@@ -63,22 +68,80 @@
 
         <div id="mobile-menu" class="bg-white lg:hidden">
             <div class="flex flex-col p-8 space-y-6 text-center">
+                <a href="{{ '/' | url }}" class="text-sm font-black tracking-widest uppercase text-slate-600">Home</a>
                 <a href="{{ '/about/' | url }}" class="text-sm font-black tracking-widest uppercase text-slate-600">About</a>
                 <a href="{{ '/stories/' | url }}" class="text-sm font-black tracking-widest uppercase text-slate-600">Stories</a>
-                
                 <a href="{{ '/what-we-do/' | url }}" class="text-sm font-black tracking-widest uppercase text-slate-600">What We Do</a>
-
                 <a href="{{ '/contact/' | url }}" class="text-sm font-black tracking-widest uppercase text-slate-600">Contact</a>
                 <a href="{{ '/donate/' | url }}" class="bg-warrior-pink text-white py-4 rounded-full text-[10px] font-black uppercase tracking-widest">Donate Now</a>
             </div>
         </div>
     </nav>
 
-    <main class="min-h-screen pt-20">
+    <main class="min-h-screen pt-23">
         {{ content | safe }}
     </main>
+<footer class="mt-20 border-t bg-slate-50/50 border-slate-100">
+    <div class="px-6 py-16 mx-auto max-w-7xl">
+        <div class="grid grid-cols-1 gap-12 md:grid-cols-4">
+            
+            <div class="md:col-span-1">
+                <img src="{{ '/assets/img/b-c-w-logo.png' | url }}" alt="Logo" class="h-10 mb-6 opacity-90">
+                <p class="text-sm font-medium leading-relaxed text-slate-500">
+                    Aiding and bringing hope to women with cancer in The Gambia. ❤️
+                </p>
+            </div>
 
+            <div>
+                <h4 class="mb-6 text-[10px] font-black uppercase tracking-[0.2em] text-slate-900">Navigation</h4>
+                <ul class="space-y-4">
+
+                    <li><a href="{{ '/about/' | url }}" class="text-sm font-bold transition-colors text-slate-500 hover:text-warrior-pink">About</a></li>
+                    <li><a href="{{ '/stories/' | url }}" class="text-sm font-bold transition-colors text-slate-500 hover:text-warrior-pink">Stories</a></li>
+                    <li><a href="{{ '/what-we-do/' | url }}" class="text-sm font-bold transition-colors text-slate-500 hover:text-warrior-pink">What We Do</a></li>
+                    <li><a href="{{ '/contact/' | url }}" class="text-sm font-bold transition-colors text-slate-500 hover:text-warrior-pink">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="mb-6 text-[10px] font-black uppercase tracking-[0.2em] text-slate-900">Connect</h4>
+                <ul class="space-y-4">
+                    <li><a href="{{ site.socials.ig }}" target="_blank" class="text-sm font-bold transition-colors text-slate-500 hover:text-warrior-pink">Instagram</a></li>
+                    {% if site.socials.facebook != "Need to create" %}
+                    <li><a href="{{ site.socials.facebook }}" target="_blank" class="text-sm font-bold transition-colors text-slate-500 hover:text-warrior-pink">Facebook</a></li>
+                    {% endif %}
+                    <li><a href="{{ site.whatsapp_channel }}" target="_blank" class="text-sm font-bold transition-colors text-slate-500 hover:text-warrior-pink">WhatsApp Channel</a></li>
+                    <li><a href="mailto:{{ site.email }}" class="text-sm font-bold transition-colors text-slate-500 hover:text-warrior-pink">Email Us</a></li>
+                    <p class="mt-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+    Located at: {{ site.address }}
+</p>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="mb-6 text-[10px] font-black uppercase tracking-[0.2em] text-slate-900">Legal</h4>
+                <ul class="space-y-4">
+                    <li><a href="#" class="text-sm font-bold transition-colors text-slate-400 hover:text-slate-600">Privacy Policy</a></li>
+                    <li><a href="#" class="text-sm font-bold transition-colors text-slate-400 hover:text-slate-600">Terms of Use</a></li>
+                    <li><p class="text-[10px] text-slate-400 font-medium italic">Reg. Charity in The Gambia</p></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pt-12 mt-12 border-t border-slate-100/50">
+            <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
+                <p class="text-[11px] font-bold uppercase tracking-widest text-slate-400">
+                    &copy;2025 Breast Cancer Warriors Gambia | Reg No: 2025/C25004
+                </p>
+                <a href="{{ '/donate/' | url }}" class="text-[11px] font-black uppercase tracking-[0.15em] text-warrior-pink border-b-2 border-warrior-pink/20 pb-1 hover:border-warrior-pink transition-all">
+                    Support our mission →
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
     <script>
+        // Preserved your exact menu toggle logic
         const btn = document.getElementById('menu-toggle');
         const menu = document.getElementById('mobile-menu');
         const hamburger = document.getElementById('hamburger-icon');

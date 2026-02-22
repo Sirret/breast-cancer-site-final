@@ -1,0 +1,35 @@
+---
+title: "Thank You"
+layout: "layout.njk"
+---
+
+<section class="min-h-screen flex items-center justify-center py-24 px-6 bg-warrior-soft/30">
+    <div class="max-w-2xl mx-auto text-center">
+        <span class="text-7xl mb-8 inline-block animate-bounce">🎗️</span>
+        <h1 class="text-6xl md:text-7xl font-serif font-bold text-warrior-dark mb-6">
+            Thank You, <br><span class="italic text-slate-900">Warrior!</span>
+        </h1>
+        <p class="text-xl font-medium text-slate-600 mb-12">
+            Your donation has been received. You are directly helping us save lives and provide care in The Gambia.
+        </p>
+
+        <div class="bg-white p-10 md:p-12 rounded-[3rem] border-2 border-warrior-pink shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-warrior-soft rounded-full opacity-50"></div>
+            
+            <h2 class="relative z-10 text-[11px] font-black uppercase tracking-[0.2em] text-slate-900 mb-4">Stay Involved</h2>
+            <p class="relative z-10 text-slate-500 mb-8 text-sm font-medium leading-relaxed">
+                Join our WhatsApp Community to see the direct impact of your gift and stay updated on our missions.
+            </p>
+            
+            <div class="flex flex-col gap-4 items-center">
+                <a href="{{ site.whatsapp_channel }}" target="_blank" class="w-full md:w-auto px-12 py-5 bg-warrior-pink text-white rounded-2xl font-black uppercase tracking-widest hover:bg-warrior-dark hover:-translate-y-1 transition-all shadow-lg shadow-warrior-pink/30">
+                    Join WhatsApp Channel
+                </a>
+                
+                <a href="{{ '/' | url }}" class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-warrior-pink transition-colors mt-4">
+                    ← Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -6,6 +6,7 @@ module.exports = function(eleventyConfig) {
     // This tells the "| url" filter to add the subfolder to every link
     pathPrefix: "/breast-cancer-site-final/",
     
+    
     dir: {
       input: "src",
       output: "_site"

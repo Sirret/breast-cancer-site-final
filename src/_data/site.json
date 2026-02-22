@@ -1,3 +1,14 @@
 {
-  "url": "https://bcwarriors.org" 
+  "url": "https://bcwarriors.org",
+  "whatsapp_channel": "https://whatsapp.com/channel/0029Vb5vJarHLHQenSrhH204",
+  "email": "breastcancerwarriors4@gmail.com",
+  "phone": {
+    "primary": "+220 702 2980",
+    "secondary": "+220 407 8968"
+  },
+  "address": "Imam Omar Sowe Avenue, The Gambia",
+  "socials": {
+    "ig": "https://www.instagram.com/breast_cancer_warriors_bcw",
+    "facebook": "Need to create"
+  }
 }
