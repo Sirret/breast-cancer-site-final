@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} | Breast Cancer Warriors Gambia</title>
+    {% if noindex %}
+    <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+
+    <title>{{ title }} | Breast Cancer Warriors Gambia</title>
+    <meta name="description" content="{{ description or excerpt or 'Aiding and bringing hope to women with cancer in The Gambia.' }}">
+    
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+
+    <meta property="og:title" content="{{ title }} | BCW Gambia">
+    <meta property="og:description" content="{{ description or 'Support women fighting breast cancer in The Gambia.' }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{{ og_image or '/assets/img/b-c-w-logo.png' | url }}">
     <style>
         .nav-logo { height: 2.2rem; width: auto; object-fit: contain; }
         @media (min-width: 768px) { .nav-logo { height: 2.8rem; } }
@@ -25,8 +38,6 @@
             border-bottom: 1px solid #f1f5f9;
         }
     </style>
-<script src="https://www.paypal.com/sdk/js?client-id={{ keys.paypal }}&currency=USD"></script>
-<script src="https://cdn.modempay.com/sdk/v1/modempay.js"></script>
 </head>
 
 <body class="font-sans antialiased bg-white text-slate-900">
