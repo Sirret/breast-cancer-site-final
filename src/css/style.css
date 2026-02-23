@@ -1,27 +1,26 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@plugin "../../node_modules/@tailwindcss/typography";
 
 @theme {
-  --color-warrior-pink: #ec4899;
-  --color-warrior-dark: #be185d;
-  --color-warrior-deep: #831843;
-  --color-warrior-soft: #fdf2f8;
-  
-  --font-serif: "Playfair Display", serif;
-  --font-sans: "Inter", sans-serif;
+	--color-warrior-pink: #ec4899;
+	--color-warrior-dark: #be185d;
+	--color-warrior-deep: #831843;
+	--color-warrior-soft: #fdf2f8;
+
+	--font-serif: 'Playfair Display', serif;
+	--font-sans: 'Inter', sans-serif;
 }
 
 @layer components {
-  .cta-btn {
-    @apply inline-block px-8 py-4 font-bold transition-all duration-300 rounded-full shadow-md;
-  }
-  .primary-cta {
-    @apply text-white bg-warrior-dark hover:bg-warrior-deep;
-  }
-
- 
+	.cta-btn {
+		@apply inline-block px-8 py-4 font-bold transition-all duration-300 rounded-full shadow-md;
+	}
+	.primary-cta {
+		@apply text-white bg-warrior-dark hover:bg-warrior-deep;
+	}
 }
 
 /* Hide all stories after the first 3 on the homepage */
-.home-story-grid article:nth-child(n+4) {
-  display: none;
+.home-story-grid article:nth-child(n + 4) {
+	display: none;
 }

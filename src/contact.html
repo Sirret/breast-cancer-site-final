@@ -4,7 +4,7 @@ layout: 'layout.njk'
 description: 'Get in touch with the Breast Cancer Warriors team. Find our address, phone numbers, and email for support or partnership inquiries.'
 ---
 
-<section class="min-h-screen py-16 bg-warrior-soft/30">
+<section class="min-h-screen py-16 pt-28 bg-warrior-soft/30">
 	<div class="px-6 mx-auto max-w-7xl">
 		<div class="mb-12 text-center lg:text-left">
 			<h1
@@ -89,12 +89,12 @@ description: 'Get in touch with the Breast Cancer Warriors team. Find our addres
 								>
 								<a
 									href="tel:{{ site.phone.primary | replace: ' ', '' }}"
-									class="text-lg font-bold leading-none text-slate-900 hover:text-warrior-pink transition-colors"
+									class="text-lg font-bold leading-none transition-colors text-slate-900 hover:text-warrior-pink"
 									>{{ site.phone.primary }}</a
 								>
 								<a
 									href="tel:{{ site.phone.secondary | replace: ' ', '' }}"
-									class="text-lg font-bold leading-none text-slate-900 hover:text-warrior-pink transition-colors"
+									class="text-lg font-bold leading-none transition-colors text-slate-900 hover:text-warrior-pink"
 									>{{ site.phone.secondary }}</a
 								>
 							</div>
@@ -137,7 +137,7 @@ description: 'Get in touch with the Breast Cancer Warriors team. Find our addres
 							<a
 								href="{{ site.socials.ig }}"
 								target="_blank"
-								class="flex items-center gap-3 text-warrior-pink hover:text-warrior-dark transition-colors font-bold"
+								class="flex items-center gap-3 font-bold transition-colors text-warrior-pink hover:text-warrior-dark"
 							>
 								<span>Follow us on Instagram</span>
 								<svg
