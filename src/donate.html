@@ -263,6 +263,9 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 <script src="https://cdn.modempay.com/sdk/v1/modempay.js"></script>
 
 <script>
+	// Bot Protection: Start timer
+	let pageLoadTime = Date.now();
+
 	function showToast(message, icon = '🎗️') {
 		const toast = document.getElementById('toast');
 		const msgElem = document.getElementById('toast-message');
@@ -359,17 +362,30 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 
 		paypal
 			.Buttons({
+				// 2. Bot Protection: Check click speed
+				onClick: (data, actions) => {
+					if (Date.now() - pageLoadTime < 3000) {
+						showToast('Please wait a moment...', '⏳');
+						return actions.reject();
+					}
+					return actions.resolve();
+				},
 				createOrder: (data, actions) => {
 					const amount = parseFloat(
 						document.getElementById('donation-input').value,
 					);
-					if (!amount || amount <= 0) {
-						showToast('Please enter an amount', '⚠️');
+					// 3. Validation: Minimum $5 for PayPal
+					if (!amount || amount < 5) {
+						showToast('Please enter an amount of $5 or more', '⚠️');
 						return actions.reject();
 					}
 					return actions.order.create({
 						purchase_units: [
-							{ amount: { value: amount.toFixed(2) } },
+							{
+								description:
+									'Donation to Breast Cancer Warriors', // 4. Fraud Detection
+								amount: { value: amount.toFixed(2) },
+							},
 						],
 					});
 				},
@@ -394,9 +410,15 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 		initPayPal();
 		const modemBtn = document.getElementById('modempay-button');
 		modemBtn?.addEventListener('click', function () {
+			// 5. Bot Protection: ModemPay click speed
+			if (Date.now() - pageLoadTime < 3000) {
+				showToast('Please wait a moment...', '⏳');
+				return;
+			}
 			const amount = document.getElementById('donation-input').value;
-			if (!amount || amount <= 0) {
-				showToast('Please enter an amount', '⚠️');
+			//  Validation: Minimum D50 for ModemPay
+			if (!amount || amount < 50) {
+				showToast('Please enter an amount of D50 or more', '⚠️');
 				return;
 			}
 			this.disabled = true;
