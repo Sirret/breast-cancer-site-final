@@ -19,7 +19,7 @@
     <meta property="og:description" content="{{ description or 'Support women fighting breast cancer in The Gambia.' }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-    <meta property="og:image" content="{{ site.url }}{{ og_image or '/assets/img/b-c-w-logo.png' | url }}">
+    <meta property="og:image" content="{{ site.url }}{{ og_image if og_image else '/assets/img/b-c-w-logo.png' }}">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
