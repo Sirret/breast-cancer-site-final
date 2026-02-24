@@ -1,8 +1,70 @@
 ---
-title: "Donate & Fund a Warrior's Treatment"
 layout: 'layout.njk'
+title: 'Support a Warrior: Fund Breast Cancer Treatment'
+description: 'Your donation directly funds medical checkups, awareness campaigns, and treatment for women in The Gambia. Securely contribute via PayPal, Bank Transfer, or Wave to save lives today.'
 ---
 
+<style>
+	.no-spinner::-webkit-inner-spin-button,
+	.no-spinner::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	.no-spinner {
+		-moz-appearance: textfield;
+	}
+	.method-pill {
+		display: inline-block;
+		padding: 1rem 2.5rem;
+		border: 2px solid #e2e8f0;
+		border-radius: 9999px;
+		font-weight: 800;
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		transition: all 0.3s ease;
+		cursor: pointer;
+		background: white;
+		color: #64748b;
+	}
+	.active-blue {
+		background-color: #2563eb !important;
+		border-color: #2563eb !important;
+		color: white !important;
+		box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+	}
+	.active-pink {
+		background-color: #ec4899 !important;
+		border-color: #ec4899 !important;
+		color: white !important;
+		box-shadow: 0 10px 15px -3px rgba(236, 72, 153, 0.3);
+	}
+	.active-slate {
+		background-color: #0f172a !important;
+		border-color: #0f172a !important;
+		color: white !important;
+		box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.3);
+	}
+	.tab-content.hidden {
+		display: none;
+	}
+	.tab-content.block {
+		display: block;
+	}
+	.animate-fadeIn {
+		animation: fadeIn 0.4s ease-out forwards;
+	}
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(8px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>
 <section class="min-h-screen pt-29 py-12 bg-warrior-soft/30">
 	<div class="px-6 mx-auto max-w-4xl">
 		<div class="mb-12 text-center">
@@ -199,68 +261,6 @@ layout: 'layout.njk'
 </div>
 <script src="https://www.paypal.com/sdk/js?client-id={{ keys.paypal }}&currency=USD"></script>
 <script src="https://cdn.modempay.com/sdk/v1/modempay.js"></script>
-
-<style>
-	.no-spinner::-webkit-inner-spin-button,
-	.no-spinner::-webkit-outer-spin-button {
-		-webkit-appearance: none;
-		margin: 0;
-	}
-	.no-spinner {
-		-moz-appearance: textfield;
-	}
-	.method-pill {
-		display: inline-block;
-		padding: 1rem 2.5rem;
-		border: 2px solid #e2e8f0;
-		border-radius: 9999px;
-		font-weight: 800;
-		font-size: 12px;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		transition: all 0.3s ease;
-		cursor: pointer;
-		background: white;
-		color: #64748b;
-	}
-	.active-blue {
-		background-color: #2563eb !important;
-		border-color: #2563eb !important;
-		color: white !important;
-		box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
-	}
-	.active-pink {
-		background-color: #ec4899 !important;
-		border-color: #ec4899 !important;
-		color: white !important;
-		box-shadow: 0 10px 15px -3px rgba(236, 72, 153, 0.3);
-	}
-	.active-slate {
-		background-color: #0f172a !important;
-		border-color: #0f172a !important;
-		color: white !important;
-		box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.3);
-	}
-	.tab-content.hidden {
-		display: none;
-	}
-	.tab-content.block {
-		display: block;
-	}
-	.animate-fadeIn {
-		animation: fadeIn 0.4s ease-out forwards;
-	}
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-			transform: translateY(8px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-</style>
 
 <script>
 	function showToast(message, icon = '🎗️') {

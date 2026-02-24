@@ -6,7 +6,9 @@ pagination:
 permalink: '/stories/{{ story.link | slugify }}/'
 layout: 'layout.njk'
 eleventyComputed:
-    title: '{{ story.title }}'
+    title: "{{ story.title }}"
+    description: "{{ story.description or story.excerpt | truncate(150) }}"
+    og_image: "{{ story.image }}"
 ---
 
 <section class="pt-24 pb-12 bg-white md:pt-32">
@@ -54,7 +56,7 @@ eleventyComputed:
 		>
 			<img
 				src="{{ story.image | url }}"
-				alt="Image of {{ story.title }} IG story post"
+				alt="Image of {{ story.title }} - Survivor Story, Breast Cancer Warriors Gambia""
 				class="w-full h-auto"
 			/>
 		</div>

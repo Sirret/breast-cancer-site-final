@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} | Breast Cancer Warriors Gambia</title>
+
     {% if noindex %}
     <meta name="robots" content="noindex, nofollow">
     {% endif %}
-
     <title>{{ title }} | Breast Cancer Warriors Gambia</title>
+
     <meta name="description" content="{{ description or excerpt or 'Aiding and bringing hope to women with cancer in The Gambia.' }}">
+    <meta name="theme-color" content="#C2185B">
     
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
@@ -18,7 +19,35 @@
     <meta property="og:description" content="{{ description or 'Support women fighting breast cancer in The Gambia.' }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-    <meta property="og:image" content="{{ og_image or '/assets/img/b-c-w-logo.png' | url }}">
+    <meta property="og:image" content="{{ site.url }}{{ og_image or '/assets/img/b-c-w-logo.png' | url }}">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Breast Cancer Warriors Gambia",
+  "alternateName": "BCW Gambia",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.url }}/assets/img/b-c-w-logo.png",
+  "taxID": "2025/C25004",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ site.address }}",
+    "addressCountry": "GM"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "{{ site.phone.primary }}",
+    "contactType": "customer support",
+    "email": "{{ site.email }}"
+  },
+  "sameAs": [
+    "{{ site.socials.ig }}",
+    "{{ site.socials.facebook }}",
+    "{{ site.socials.tiktok }}",
+    "{{ site.whatsapp_channel }}"
+  ]
+}
+</script>
     <style>
         .nav-logo { height: 2.2rem; width: auto; object-fit: contain; }
         @media (min-width: 768px) { .nav-logo { height: 2.8rem; } }
@@ -123,6 +152,7 @@
                     <li><a href="{{ site.socials.facebook }}" target="_blank" class="text-sm font-bold transition-colors text-slate-500 hover:text-warrior-pink">Facebook</a></li>
                     {% endif %}
                     <li><a href="{{ site.whatsapp_channel }}" target="_blank" class="text-sm font-bold transition-colors text-slate-500 hover:text-warrior-pink">WhatsApp Channel</a></li>
+                    <li><a href="{{ site.socials.tiktok }}" target="_blank" class="text-sm font-bold transition-colors text-slate-500 hover:text-warrior-pink">TikTok</a></li>
                     <li><a href="mailto:{{ site.email }}" class="text-sm font-bold transition-colors text-slate-500 hover:text-warrior-pink">Email Us</a></li>
                     <p class="mt-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
     Located at: {{ site.address }}
