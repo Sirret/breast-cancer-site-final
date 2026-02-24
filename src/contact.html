@@ -169,6 +169,7 @@ description: 'Get in touch with the Breast Cancer Warriors team. Find our addres
 						method="POST"
 						data-netlify="true"
 						data-netlify-recaptcha="true"
+						data-netlify-honeypot="bot-field"
 						action="{{ '/thank-you/' | url }}"
 						class="space-y-10"
 					>
@@ -223,7 +224,7 @@ description: 'Get in touch with the Breast Cancer Warriors team. Find our addres
 								class="w-full px-6 py-4 text-lg font-bold transition-all border-2 outline-none resize-none bg-warrior-soft border-warrior-pink/20 rounded-3xl text-slate-900 focus:border-warrior-dark focus:bg-white"
 							></textarea>
 						</div>
-
+						<div data-netlify-recaptcha="true"></div>
 						<div class="flex justify-center md:justify-start">
 							<button
 								type="submit"
