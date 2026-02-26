@@ -9,6 +9,19 @@
 
 	--font-serif: 'Playfair Display', serif;
 	--font-sans: 'Inter', sans-serif;
+
+	/* Custom Animation for Tabs */
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(8px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	--animation-fade-in: fadeIn 0.4s ease-out forwards;
 }
 
 @layer components {
@@ -20,11 +33,7 @@
 	}
 }
 
-/* Hide all stories after the first 3 on the homepage */
-.home-story-grid article:nth-child(n + 4) {
-	display: none;
-}
-/* Hide all stories after the first 3 on the homepage */
+/* Global Selectors */
 .home-story-grid article:nth-child(n + 4) {
 	display: none;
 }
@@ -32,10 +41,11 @@
 @utility nav-compact {
 	@apply py-2;
 }
-
 @utility nav-logo-compact {
 	@apply h-10;
 }
+
+/* Functional Utilities for Donation Page */
 @utility no-spinner {
 	-moz-appearance: textfield;
 	&::-webkit-inner-spin-button,
@@ -44,10 +54,28 @@
 		margin: 0;
 	}
 }
+
 @utility method-pill {
-	@apply inline-block px-10 py-4 bg-white text-slate-500 font-extrabold text-[12px] uppercase tracking-widest border-2 border-slate-200 rounded-full transition-all duration-300 cursor-pointer;
+	@apply inline-block px-10 py-4 bg-white text-slate-500 font-extrabold text-[12px] 
+	       uppercase tracking-widest border-2 border-slate-200 rounded-full 
+	       transition-all duration-300 cursor-pointer;
 }
 
+/* Tab Active States */
 @utility active-pill-blue {
 	@apply bg-blue-600! border-blue-600! text-white! shadow-lg shadow-blue-500/30;
+}
+@utility active-pill-pink {
+	@apply bg-pink-500! border-pink-500! text-white! shadow-lg shadow-pink-500/30;
+}
+@utility active-pill-slate {
+	@apply bg-slate-900! border-slate-900! text-white! shadow-lg shadow-slate-800/30;
+}
+
+/* Tab Visibility */
+@utility tab-hidden {
+	display: none;
+}
+@utility tab-block {
+	display: block;
 }

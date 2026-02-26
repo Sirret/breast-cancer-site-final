@@ -4,67 +4,6 @@ title: 'Support a Warrior: Fund Breast Cancer Treatment'
 description: 'Your donation directly funds medical checkups, awareness campaigns, and treatment for women in The Gambia. Securely contribute via PayPal, Bank Transfer, or Wave to save lives today.'
 ---
 
-<style>
-	.no-spinner::-webkit-inner-spin-button,
-	.no-spinner::-webkit-outer-spin-button {
-		-webkit-appearance: none;
-		margin: 0;
-	}
-	.no-spinner {
-		-moz-appearance: textfield;
-	}
-	.method-pill {
-		display: inline-block;
-		padding: 1rem 2.5rem;
-		border: 2px solid #e2e8f0;
-		border-radius: 9999px;
-		font-weight: 800;
-		font-size: 12px;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		transition: all 0.3s ease;
-		cursor: pointer;
-		background: white;
-		color: #64748b;
-	}
-	.active-blue {
-		background-color: #2563eb !important;
-		border-color: #2563eb !important;
-		color: white !important;
-		box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
-	}
-	.active-pink {
-		background-color: #ec4899 !important;
-		border-color: #ec4899 !important;
-		color: white !important;
-		box-shadow: 0 10px 15px -3px rgba(236, 72, 153, 0.3);
-	}
-	.active-slate {
-		background-color: #0f172a !important;
-		border-color: #0f172a !important;
-		color: white !important;
-		box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.3);
-	}
-	.tab-content.hidden {
-		display: none;
-	}
-	.tab-content.block {
-		display: block;
-	}
-	.animate-fadeIn {
-		animation: fadeIn 0.4s ease-out forwards;
-	}
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-			transform: translateY(8px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-</style>
 <section class="min-h-screen py-12 pt-29 bg-warrior-soft/30">
 	<div class="max-w-4xl px-6 mx-auto">
 		<div class="mb-12 text-center">
@@ -107,7 +46,7 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 			<button
 				onclick="openTab(event, 'paypal-tab')"
 				id="defaultOpen"
-				class="method-pill active-blue"
+				class="method-pill active-pill-blue"
 			>
 				International
 			</button>
@@ -130,7 +69,7 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 		>
 			<div
 				id="paypal-tab"
-				class="block tab-content animate-fadeIn"
+				class="tab-block tab-content animate-fade-in"
 			>
 				<div class="max-w-sm mx-auto text-center">
 					<div
@@ -155,7 +94,7 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 
 			<div
 				id="modem-tab"
-				class="hidden tab-content animate-fadeIn"
+				class="tab-hidden tab-content animate-fade-in"
 			>
 				<div class="max-w-sm mx-auto text-center">
 					<div
@@ -182,7 +121,7 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 
 			<div
 				id="bank-tab"
-				class="hidden tab-content animate-fadeIn"
+				class="tab-hidden tab-content animate-fade-in"
 			>
 				<div class="max-w-md mx-auto">
 					<h2
@@ -259,6 +198,7 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 		></p>
 	</div>
 </div>
+
 <script
 	src="https://www.paypal.com/sdk/js?client-id={{ keys.paypal }}&currency=USD"
 	defer
@@ -269,7 +209,6 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 ></script>
 
 <script defer>
-	// Bot Protection: Start timer
 	let pageLoadTime = Date.now();
 
 	function showToast(message, icon = '🎗️') {
@@ -303,27 +242,43 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 	};
 
 	function openTab(evt, tabName) {
-		let contents = document.getElementsByClassName('tab-content');
-		for (let i = 0; i < contents.length; i++)
-			contents[i].classList.replace('block', 'hidden');
-		let buttons = document.getElementsByClassName('method-pill');
-		for (let i = 0; i < buttons.length; i++)
-			buttons[i].classList.remove(
-				'active-blue',
-				'active-pink',
-				'active-slate',
-			);
+		// 1. Hide all content using forEach
+		const contents = document.querySelectorAll('.tab-content');
+		contents.forEach((c) => {
+			c.classList.remove('tab-block');
+			c.classList.add('tab-hidden');
+		});
 
-		document.getElementById(tabName).classList.replace('hidden', 'block');
+		// 2. Reset all buttons using forEach
+		const buttons = document.querySelectorAll('.method-pill');
+		buttons.forEach((b) =>
+			b.classList.remove(
+				'active-pill-blue',
+				'active-pill-pink',
+				'active-pill-slate',
+			),
+		);
+
+		// 3. Show target tab
+		const target = document.getElementById(tabName);
+		if (target.classList.contains('tab-hidden')) {
+			target.classList.replace('tab-hidden', 'tab-block');
+		} else {
+			target.classList.add('tab-block');
+		}
+
+		// 4. Update UI based on selection
 		const symbol = document.getElementById('currency-symbol');
 		if (tabName === 'paypal-tab') {
-			evt.currentTarget.classList.add('active-blue');
+			evt.currentTarget.classList.add('active-pill-blue');
 			symbol.innerText = '$';
+			// Force PayPal to check container visibility
+			if (window.paypal) initPayPal();
 		} else if (tabName === 'modem-tab') {
-			evt.currentTarget.classList.add('active-pink');
+			evt.currentTarget.classList.add('active-pill-pink');
 			symbol.innerText = 'D';
 		} else {
-			evt.currentTarget.classList.add('active-slate');
+			evt.currentTarget.classList.add('active-pill-slate');
 			symbol.innerText = 'D';
 		}
 	}
@@ -348,8 +303,9 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 				: 'my donation';
 		const charityIG = '{{ site.socials.ig_name }}';
 		const message = encodeURIComponent(
-			`Hello! I have just sent ${amountStr} via bank transfer. I want to make sure you received it so it can help support a warrior's treatment. 🎗️`,
+			`Hello! I have just sent ${amountStr} via bank transfer. 🎗️`,
 		);
+
 		window.open(`https://ig.me/m/${charityIG}?text=${message}`, '_blank');
 		showToast('Redirecting to Instagram...', '📱');
 		setTimeout(() => {
@@ -364,65 +320,72 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 		}
 		const container = document.getElementById('paypal-button-container');
 		if (!container) return;
-		container.innerHTML = '';
 
-		paypal
-			.Buttons({
-				// 2. Bot Protection: Check click speed
-				onClick: (data, actions) => {
-					if (Date.now() - pageLoadTime < 3000) {
-						showToast('Please wait a moment...', '⏳');
-						return actions.reject();
-					}
-					return actions.resolve();
-				},
-				createOrder: (data, actions) => {
-					const amount = parseFloat(
-						document.getElementById('donation-input').value,
-					);
-					// 3. Validation: Minimum $5 for PayPal
-					if (!amount || amount < 5) {
-						showToast('Please enter an amount of $5 or more', '⚠️');
-						return actions.reject();
-					}
-					return actions.order.create({
-						purchase_units: [
-							{
-								description:
-									'Donation to Breast Cancer Warriors', // 4. Fraud Detection
-								amount: { value: amount.toFixed(2) },
-							},
-						],
-					});
-				},
-				onApprove: (data, actions) =>
-					actions.order.capture().then(() => {
-						showToast('Success! Redirecting...', '✅');
-						window.location.href = getSuccessUrl();
-					}),
-				onCancel: () => {
-					showToast('Cancelled. Try Bank Transfer?', 'ℹ️');
-					document.querySelector('[onclick*="bank-tab"]')?.click();
-				},
-				onError: (err) => {
-					showToast('Connection error.', '❌');
-				},
-			})
-			.render('#paypal-button-container');
+		// Only clear and re-render if the container is empty or button is missing
+		if (container.children.length === 0) {
+			paypal
+				.Buttons({
+					onClick: (data, actions) => {
+						if (Date.now() - pageLoadTime < 3000) {
+							showToast('Please wait a moment...', '⏳');
+							return actions.reject();
+						}
+						return actions.resolve();
+					},
+					createOrder: (data, actions) => {
+						const amount = parseFloat(
+							document.getElementById('donation-input').value,
+						);
+						if (!amount || amount < 5) {
+							showToast(
+								'Please enter an amount of $5 or more',
+								'⚠️',
+							);
+							return actions.reject();
+						}
+						return actions.order.create({
+							purchase_units: [
+								{
+									description:
+										'Donation to Breast Cancer Warriors',
+									amount: { value: amount.toFixed(2) },
+								},
+							],
+						});
+					},
+					onApprove: (data, actions) =>
+						actions.order.capture().then(() => {
+							showToast('Success! Redirecting...', '✅');
+							window.location.href = getSuccessUrl();
+						}),
+					onCancel: () => {
+						showToast('Cancelled. Try Bank Transfer?', 'ℹ️');
+						document
+							.querySelector('[onclick*="bank-tab"]')
+							?.click();
+					},
+					onError: (err) => {
+						showToast('Connection error.', '❌');
+					},
+				})
+				.render('#paypal-button-container');
+		}
 	}
 
 	document.addEventListener('DOMContentLoaded', () => {
-		document.getElementById('defaultOpen')?.click();
+		// Trigger initial tab
+		const defaultTab = document.getElementById('defaultOpen');
+		if (defaultTab) defaultTab.click();
+
 		initPayPal();
+
 		const modemBtn = document.getElementById('modempay-button');
 		modemBtn?.addEventListener('click', function () {
-			// 5. Bot Protection: ModemPay click speed
 			if (Date.now() - pageLoadTime < 3000) {
 				showToast('Please wait a moment...', '⏳');
 				return;
 			}
 			const amount = document.getElementById('donation-input').value;
-			//  Validation: Minimum D50 for ModemPay
 			if (!amount || amount < 50) {
 				showToast('Please enter an amount of D50 or more', '⚠️');
 				return;
