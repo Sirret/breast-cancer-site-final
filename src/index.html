@@ -5,9 +5,6 @@ description: 'Empowering breast cancer survivors in The Gambia through early det
 og_image: '/assets/img/og-home.jpg'
 ---
 
----
-
-<!-- HERO SECTION -->
 <section
 	id="hero"
 	class="relative pt-32 pb-24 overflow-hidden bg-warrior-soft"
@@ -34,12 +31,12 @@ og_image: '/assets/img/og-home.jpg'
 			</p>
 			<div class="flex flex-wrap justify-start gap-4">
 				<a
-					href="{{ '/donate/' | url }}"
+					href="{{ '/donate/' | url() }}"
 					class="cta-btn primary-cta"
 					>Donate Now</a
 				>
 				<a
-					href="{{'/stories/'| url }}"
+					href="{{'/stories/'| url() }}"
 					class="bg-white border-2 border-pink-100 cta-btn text-warrior-dark hover:bg-pink-50"
 					>Read Stories</a
 				>
@@ -48,7 +45,6 @@ og_image: '/assets/img/og-home.jpg'
 	</div>
 </section>
 
-<!-- FOUNDERS SECTION -->
 <section
 	id="founders"
 	class="py-24 bg-warrior-soft/50"
@@ -63,15 +59,12 @@ og_image: '/assets/img/og-home.jpg'
 			<div class="w-20 h-1.5 bg-warrior-pink mx-auto rounded-full"></div>
 		</div>
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
-			<!-- Amie -->
 			<div
 				class="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row gap-8 items-center border border-pink-100/50"
 			>
-				<img
-					src="{{ '/assets/img/pictures/amie-profile.jpg' | url }}"
-					alt="Amie Corr"
-					class="object-cover w-40 h-40 transition-all duration-500 shadow-inner rounded-2xl"
-				/>
+				{% image { src: "/assets/img/pictures/amie-profile.jpg", alt:
+				"Amie Corr", class: "object-cover w-40 h-40 transition-all
+				duration-500 shadow-inner rounded-2xl" } %}
 				<div class="text-left">
 					<h3
 						class="mb-2 font-serif text-2xl font-bold text-warrior-dark"
@@ -91,15 +84,12 @@ og_image: '/assets/img/og-home.jpg'
 					>
 				</div>
 			</div>
-			<!-- tida -->
 			<div
 				class="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row gap-8 items-center border border-pink-100/50"
 			>
-				<img
-					src="{{ '/assets/img/pictures/tida-profile.jpg' | url }}"
-					alt="tida"
-					class="object-cover w-40 h-40 transition-all duration-500 shadow-inner rounded-2xl"
-				/>
+				{% image { src: "/assets/img/pictures/tida-profile.jpg", alt:
+				"Tida Njie", class: "object-cover w-40 h-40 transition-all
+				duration-500 shadow-inner rounded-2xl" } %}
 				<div class="text-left">
 					<h3
 						class="mb-2 font-serif text-2xl font-bold text-warrior-dark"
@@ -123,8 +113,6 @@ og_image: '/assets/img/og-home.jpg'
 	</div>
 </section>
 
-<!-- STORIES SECTION (FAIL-SAFE 3 STORY LIMIT) -->
-<!-- STORIES SECTION (CSS LIMIT) -->
 <section
 	id="stories-teaser"
 	class="py-24 bg-white"
@@ -142,14 +130,13 @@ og_image: '/assets/img/og-home.jpg'
 				</p>
 			</div>
 			<a
-				href="{{'/stories/'| url }}"
+				href="{{'/stories/'| url() }}"
 				class="hidden font-bold underline transition-all md:inline-block text-warrior-dark hover:text-warrior-pink decoration-pink-200 decoration-2 underline-offset-8"
 			>
 				View All Stories
 			</a>
 		</div>
 
-		<!-- We added the 'home-story-grid' class here -->
 		<div class="grid grid-cols-1 gap-10 home-story-grid md:grid-cols-3">
 			{% for story in stories %}
 			<article
@@ -158,17 +145,15 @@ og_image: '/assets/img/og-home.jpg'
 				<div
 					class="aspect-[4/5] overflow-hidden rounded-b-[2.5rem] mb-6 shadow-xl shadow-pink-900/5"
 				>
-					<img
-						src="{{ story.image | url }}"
-						alt="{{ story.title }}"
-						class="object-cover w-full h-full transition-all duration-700 group-hover:scale-105"
-					/>
+					{% image { src: story.image, alt: story.title, class:
+					"object-cover w-full h-full transition-all duration-700
+					group-hover:scale-105" } %}
 
 					<div
 						class="absolute inset-0 flex items-end p-8 transition-opacity opacity-0 bg-gradient-to-t from-warrior-deep/80 via-transparent to-transparent group-hover:opacity-100"
 					>
 						<a
-							href="{{ '/stories/' | url }}{{ story.link | slugify }}/"
+							href="{{ '/stories/' | url() }}{{ story.link | slugify() }}/"
 							class="font-bold tracking-tight text-white"
 							>Read Full Account &rarr;</a
 						>
@@ -185,7 +170,6 @@ og_image: '/assets/img/og-home.jpg'
 	</div>
 </section>
 
-<!-- CALL TO ACTION -->
 <section class="mx-6 mb-24">
 	<div
 		class="max-w-7xl mx-auto bg-slate-900 rounded-[3.5rem] p-12 md:p-20 text-center relative overflow-hidden"
@@ -204,7 +188,7 @@ og_image: '/assets/img/og-home.jpg'
 				and life-saving awareness campaigns across The Gambia.
 			</p>
 			<a
-				href="{{ '/donate/' | url }}"
+				href="{{ '/donate/' | url() }}"
 				class="px-10 py-5 text-lg cta-btn primary-cta"
 				>Make a Donation Today</a
 			>

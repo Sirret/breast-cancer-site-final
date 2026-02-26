@@ -32,11 +32,9 @@ pagination:
 				class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full"
 			>
 				<div class="relative h-64 overflow-hidden bg-warrior-soft">
-					<img
-						src="{{ story.image | url }}"
-						alt="{{ story.title }}"
-						class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
-					/>
+					{% image { src: story.image, alt: story.title, class:
+					"object-cover w-full h-full transition-transform
+					duration-700 group-hover:scale-110" } %}
 					<div
 						class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"
 					></div>
@@ -56,13 +54,13 @@ pagination:
 					<p
 						class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600"
 					>
-						"{{ story.excerpt | truncate: 120 }}"
+						"{{ story.excerpt | truncate(120)}}"
 					</p>
 					<div
 						class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link"
 					>
 						<a
-							href="{{ '/stories/' | url }}{{ story.link | slugify }}/"
+							href="{{ '/stories/' | url() }}{{ story.link | slugify () }}/"
 							class="after:absolute after:inset-0"
 						>
 							Read Full Story
@@ -91,7 +89,7 @@ pagination:
 		<nav class="flex items-center justify-center gap-4 mt-16">
 			{% if pagination.href.previous %}
 			<a
-				href="{{ pagination.href.previous | url }}"
+				href="{{ pagination.href.previous | url() }}"
 				class="px-6 py-3 text-[11px] font-black uppercase tracking-widest border border-slate-200 rounded-full hover:bg-warrior-pink hover:text-white hover:border-warrior-pink transition-all duration-300"
 			>
 				Previous
@@ -101,14 +99,13 @@ pagination:
 			<div
 				class="text-[11px] font-black uppercase tracking-widest text-slate-400"
 			>
-				{% comment %} Liquid math uses filters like 'plus' instead of +
-				symbols {% endcomment %} Page {{ pagination.pageNumber | plus: 1
-				}} of {{ pagination.pages.length }}
+				{# Nunjucks uses standard math symbols #} Page {{
+				pagination.pageNumber + 1 }} of {{ pagination.pages.length }}
 			</div>
 
 			{% if pagination.href.next %}
 			<a
-				href="{{ pagination.href.next | url }}"
+				href="{{ pagination.href.next | url() }}"
 				class="px-6 py-3 text-[11px] font-black uppercase tracking-widest border border-slate-200 rounded-full hover:bg-warrior-pink hover:text-white hover:border-warrior-pink transition-all duration-300"
 			>
 				Next

@@ -65,15 +65,15 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 		}
 	}
 </style>
-<section class="min-h-screen pt-29 py-12 bg-warrior-soft/30">
-	<div class="px-6 mx-auto max-w-4xl">
+<section class="min-h-screen py-12 pt-29 bg-warrior-soft/30">
+	<div class="max-w-4xl px-6 mx-auto">
 		<div class="mb-12 text-center">
 			<h1
 				class="font-serif text-5xl font-bold leading-tight md:text-8xl text-slate-900"
 			>
 				Support a <br />
 				<span
-					class="italic text-warrior-pink underline decoration-warrior-pink/20 underline-offset-8"
+					class="italic underline text-warrior-pink decoration-warrior-pink/20 underline-offset-8"
 					>Warrior.</span
 				>
 			</h1>
@@ -93,7 +93,7 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 					id="donation-input"
 					inputmode="decimal"
 					placeholder="0.00"
-					class="no-spinner w-full px-4 py-4 bg-transparent outline-none text-2xl font-black text-slate-900 placeholder:text-slate-200"
+					class="w-full px-4 py-4 text-2xl font-black bg-transparent outline-none no-spinner text-slate-900 placeholder:text-slate-200"
 				/>
 			</div>
 			<p
@@ -130,16 +130,16 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 		>
 			<div
 				id="paypal-tab"
-				class="tab-content block animate-fadeIn"
+				class="block tab-content animate-fadeIn"
 			>
 				<div class="max-w-sm mx-auto text-center">
 					<div
-						class="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-2xl bg-blue-50 text-blue-600 text-3xl shadow-inner"
+						class="inline-flex items-center justify-center w-16 h-16 mb-6 text-3xl text-blue-600 shadow-inner rounded-2xl bg-blue-50"
 					>
 						🌍
 					</div>
 					<h2
-						class="font-serif text-3xl font-bold mb-4 text-slate-900"
+						class="mb-4 font-serif text-3xl font-bold text-slate-900"
 					>
 						PayPal & Cards
 					</h2>
@@ -155,16 +155,16 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 
 			<div
 				id="modem-tab"
-				class="tab-content hidden animate-fadeIn"
+				class="hidden tab-content animate-fadeIn"
 			>
 				<div class="max-w-sm mx-auto text-center">
 					<div
-						class="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-2xl bg-warrior-soft text-warrior-pink text-3xl shadow-inner"
+						class="inline-flex items-center justify-center w-16 h-16 mb-6 text-3xl shadow-inner rounded-2xl bg-warrior-soft text-warrior-pink"
 					>
 						🇬🇲
 					</div>
 					<h2
-						class="font-serif text-3xl font-bold mb-4 text-slate-900"
+						class="mb-4 font-serif text-3xl font-bold text-slate-900"
 					>
 						Mobile Money
 					</h2>
@@ -182,18 +182,18 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 
 			<div
 				id="bank-tab"
-				class="tab-content hidden animate-fadeIn"
+				class="hidden tab-content animate-fadeIn"
 			>
 				<div class="max-w-md mx-auto">
 					<h2
-						class="font-serif text-3xl font-bold mb-8 text-center text-slate-900"
+						class="mb-8 font-serif text-3xl font-bold text-center text-slate-900"
 					>
 						Bank Transfer
 					</h2>
 					<div
 						class="p-8 md:p-10 bg-slate-900 rounded-[2.5rem] shadow-2xl mb-8 relative overflow-hidden"
 					>
-						<div class="space-y-8 relative z-10 text-white">
+						<div class="relative z-10 space-y-8 text-white">
 							<div>
 								<p
 									class="text-[11px] font-black uppercase tracking-widest opacity-70 mb-3"
@@ -201,11 +201,11 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 									GTBank BBAN
 								</p>
 								<div
-									class="flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+									class="flex flex-col justify-between gap-4 sm:flex-row sm:items-center"
 								>
 									<span
 										id="bban"
-										class="text-2xl md:text-3xl font-black tracking-tight break-all text-white"
+										class="text-2xl font-black tracking-tight text-white break-all md:text-3xl"
 										>005201129562559052</span
 									>
 									<button
@@ -246,7 +246,7 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 	class="fixed top-10 left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 transform translate-y-[-20px] opacity-0 pointer-events-none"
 >
 	<div
-		class="bg-slate-900 text-white px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-4 border border-white/10 backdrop-blur-xl"
+		class="flex items-center gap-4 px-8 py-4 text-white border shadow-2xl bg-slate-900 rounded-2xl border-white/10 backdrop-blur-xl"
 	>
 		<span
 			id="toast-icon"
@@ -259,10 +259,16 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 		></p>
 	</div>
 </div>
-<script src="https://www.paypal.com/sdk/js?client-id={{ keys.paypal }}&currency=USD"></script>
-<script src="https://cdn.modempay.com/sdk/v1/modempay.js"></script>
+<script
+	src="https://www.paypal.com/sdk/js?client-id={{ keys.paypal }}&currency=USD"
+	defer
+></script>
+<script
+	src="https://cdn.modempay.com/sdk/v1/modempay.js"
+	defer
+></script>
 
-<script>
+<script defer>
 	// Bot Protection: Start timer
 	let pageLoadTime = Date.now();
 

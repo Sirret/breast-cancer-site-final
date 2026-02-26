@@ -24,3 +24,30 @@
 .home-story-grid article:nth-child(n + 4) {
 	display: none;
 }
+/* Hide all stories after the first 3 on the homepage */
+.home-story-grid article:nth-child(n + 4) {
+	display: none;
+}
+
+@utility nav-compact {
+	@apply py-2;
+}
+
+@utility nav-logo-compact {
+	@apply h-10;
+}
+@utility no-spinner {
+	-moz-appearance: textfield;
+	&::-webkit-inner-spin-button,
+	&::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+}
+@utility method-pill {
+	@apply inline-block px-10 py-4 bg-white text-slate-500 font-extrabold text-[12px] uppercase tracking-widest border-2 border-slate-200 rounded-full transition-all duration-300 cursor-pointer;
+}
+
+@utility active-pill-blue {
+	@apply bg-blue-600! border-blue-600! text-white! shadow-lg shadow-blue-500/30;
+}

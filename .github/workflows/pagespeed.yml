@@ -1,0 +1,17 @@
+name: PageSpeed Insights
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    performance:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Running Page Speed Insights (Mobile)
+              uses: jakepartusch/psi-action@v1.3
+              with:
+                  url: 'https://sirret.github.io/breast-cancer-site-final/'
+                  threshold: 70
+                  strategy: mobile

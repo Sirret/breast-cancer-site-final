@@ -88,12 +88,12 @@ description: 'Get in touch with the Breast Cancer Warriors team. Find our addres
 									>Call Us</span
 								>
 								<a
-									href="tel:{{ site.phone.primary | replace: ' ', '' }}"
+									href="tel:{{ site.phone.primary }}"
 									class="text-lg font-bold leading-none transition-colors text-slate-900 hover:text-warrior-pink"
 									>{{ site.phone.primary }}</a
 								>
 								<a
-									href="tel:{{ site.phone.secondary | replace: ' ', '' }}"
+									href="tel:{{ site.phone.secondary}}"
 									class="text-lg font-bold leading-none transition-colors text-slate-900 hover:text-warrior-pink"
 									>{{ site.phone.secondary }}</a
 								>
@@ -170,7 +170,7 @@ description: 'Get in touch with the Breast Cancer Warriors team. Find our addres
 						data-netlify="true"
 						data-netlify-recaptcha="true"
 						data-netlify-honeypot="bot-field"
-						action="{{ '/thank-you/' | url }}"
+						action="{{ '/thank-you/' | url ()}}"
 						class="space-y-10"
 					>
 						<div class="hidden">

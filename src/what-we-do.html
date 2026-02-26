@@ -8,9 +8,9 @@ description: 'From school health engagements to medical fund management, see how
 <section class="pb-12 text-center bg-white pt-28">
 	<div class="max-w-4xl px-6 mx-auto">
 		<h1
-			class="text-6xl md:text-8xl font-serif font-bold text-[#001F3F] leading-[0.8] tracking-tighter mb-4 uppercase"
+			class="text-6xl md:text-8xl font-serif font-bold text-slate-900 leading-[0.8] tracking-tighter mb-4 uppercase"
 		>
-			Our <span class="text-[#C2185B] italic">Mission</span>
+			Our <span class="italic text-warrior-dark">Mission</span>
 			<br class="md:hidden" />
 			in Action
 		</h1>
@@ -29,7 +29,7 @@ description: 'From school health engagements to medical fund management, see how
 				<div class="flex justify-between gap-4 mb-6">
 					<div class="flex-1">
 						<h3
-							class="text-2xl font-black uppercase tracking-tighter leading-[0.9] mb-4 text-[#001F3F]"
+							class="text-2xl font-black uppercase tracking-tighter leading-[0.9] mb-4 text-slate-900"
 						>
 							Clinical Breast Screenings
 						</h3>
@@ -44,43 +44,41 @@ description: 'From school health engagements to medical fund management, see how
 					<div
 						class="w-24 h-24 overflow-hidden shadow-md rounded-2xl shrink-0"
 					>
-						<img
-							src="{{ '/assets/img/what-we-do/tanka-group.jpeg' | url }}"
-							alt="Screenings"
-							class="object-cover w-full h-full"
-						/>
+						{% image { src:
+						"/assets/img/what-we-do/tanka-group.jpeg", alt:
+						"Screenings", class: "object-cover w-full h-full" } %}
 					</div>
 				</div>
 				<div class="pt-6 mt-auto border-t border-slate-100">
 					<p
-						class="text-[17px] font-serif italic leading-snug mb-4 text-[#C2185B]"
+						class="text-[17px] font-serif italic leading-snug mb-4 text-warrior-dark"
 					>
 						"Early detection saves lives! Know the signs and go for
 						screenings."
 					</p>
 					<span
-						class="block text-[10px] font-black uppercase tracking-[0.2em] text-[#001F3F] opacity-60"
+						class="block text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 opacity-60"
 						>— Aja Bintou Manneh</span
 					>
 				</div>
 				<a
-					href="{{ '/stories/aja-bintou-manneh-1-story/' | url }}"
+					href="{{ '/stories/aja-bintou-manneh-1-story/' | url() }}"
 					class="absolute inset-0 z-10"
 				></a>
 			</article>
 
 			<article
-				class="group relative flex flex-col p-8 rounded-[30px] bg-[#FFF0F5] transition-all duration-500 hover:-translate-y-2 hover:shadow-xl min-h-[420px]"
+				class="group relative flex flex-col p-8 rounded-[30px] bg-warrior-soft transition-all duration-500 hover:-translate-y-2 hover:shadow-xl min-h-[420px]"
 			>
 				<div class="flex justify-between gap-4 mb-6">
 					<div class="flex-1">
 						<h3
-							class="text-2xl font-black uppercase tracking-tighter leading-[0.9] mb-4 text-[#001F3F]"
+							class="text-2xl font-black uppercase tracking-tighter leading-[0.9] mb-4 text-slate-900"
 						>
 							SBE Training & Education
 						</h3>
 						<p
-							class="text-[15px] leading-relaxed text-[#001F3F]/80 font-medium"
+							class="text-[15px] leading-relaxed text-slate-900/80 font-medium"
 						>
 							We teach women how to perform Self-Breast
 							Examinations (SBE), empowering the community with
@@ -90,33 +88,31 @@ description: 'From school health engagements to medical fund management, see how
 					<div
 						class="w-24 h-24 overflow-hidden shadow-md rounded-2xl shrink-0"
 					>
-						<img
-							src="{{ '/assets/img/groups/group-pic-3.jpg' | url }}"
-							alt="Training"
-							class="object-cover w-full h-full"
-						/>
+						{% image { src: "/assets/img/groups/group-pic-3.jpg",
+						alt: "Training", class: "object-cover w-full h-full" }
+						%}
 					</div>
 				</div>
-				<div class="mt-auto pt-6 border-t border-[#001F3F]/10">
+				<div class="pt-6 mt-auto border-t border-slate-900/10">
 					<p
-						class="text-[17px] font-serif italic leading-snug mb-4 text-[#C2185B]"
+						class="text-[17px] font-serif italic leading-snug mb-4 text-warrior-dark"
 					>
 						"It started with a small lump I almost ignored... I
 						didn't know where to begin."
 					</p>
 					<span
-						class="block text-[10px] font-black uppercase tracking-[0.2em] text-[#001F3F] opacity-60"
+						class="block text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 opacity-60"
 						>— Adama Fadiya</span
 					>
 				</div>
 				<a
-					href="{{ '/stories/adama-fadiya-story/' | url }}"
+					href="{{ '/stories/adama-fadiya-story/' | url() }}"
 					class="absolute inset-0 z-10"
 				></a>
 			</article>
 
 			<article
-				class="group relative flex flex-col p-8 rounded-[30px] bg-[#001F3F] text-white transition-all duration-500 hover:-translate-y-2 hover:shadow-xl min-h-[420px]"
+				class="group relative flex flex-col p-8 rounded-[30px] bg-slate-900 text-white transition-all duration-500 hover:-translate-y-2 hover:shadow-xl min-h-[420px]"
 			>
 				<div class="flex justify-between gap-4 mb-6">
 					<div class="flex-1">
@@ -136,16 +132,14 @@ description: 'From school health engagements to medical fund management, see how
 					<div
 						class="w-24 h-24 overflow-hidden shadow-md rounded-2xl shrink-0"
 					>
-						<img
-							src="{{ '/assets/img/what-we-do/community-outreach.jpeg' | url }}"
-							alt="Outreach"
-							class="object-cover w-full h-full"
-						/>
+						{% image { src:
+						"/assets/img/what-we-do/community-outreach.jpeg", alt:
+						"Outreach", class: "object-cover w-full h-full" } %}
 					</div>
 				</div>
 				<div class="pt-6 mt-auto border-t border-white/10">
 					<p
-						class="text-[17px] font-serif italic leading-snug mb-4 text-[#FF00FF]"
+						class="text-[17px] font-serif italic leading-snug mb-4 text-warrior-pink"
 					>
 						"If God brought you this far, then trust He has
 						something greater ahead."
@@ -156,13 +150,13 @@ description: 'From school health engagements to medical fund management, see how
 					>
 				</div>
 				<a
-					href="{{ '/stories/awa-njie-story/' | url }}"
+					href="{{ '/stories/awa-njie-story/' | url() }}"
 					class="absolute inset-0 z-10"
 				></a>
 			</article>
 
 			<article
-				class="group relative flex flex-col p-8 rounded-[30px] bg-[#C2185B] text-white transition-all duration-500 hover:-translate-y-2 hover:shadow-xl min-h-[420px]"
+				class="group relative flex flex-col p-8 rounded-[30px] bg-warrior-dark text-white transition-all duration-500 hover:-translate-y-2 hover:shadow-xl min-h-[420px]"
 			>
 				<div class="flex justify-between gap-4 mb-6">
 					<div class="flex-1">
@@ -182,11 +176,10 @@ description: 'From school health engagements to medical fund management, see how
 					<div
 						class="w-24 h-24 overflow-hidden border shadow-md rounded-2xl shrink-0 border-white/20"
 					>
-						<img
-							src="{{ '/assets/img/what-we-do/emotional-support.jpeg' | url }}"
-							alt="Financial Support"
-							class="object-cover w-full h-full"
-						/>
+						{% image { src:
+						"/assets/img/what-we-do/emotional-support.jpeg", alt:
+						"Financial Support", class: "object-cover w-full h-full"
+						} %}
 					</div>
 				</div>
 				<div class="pt-6 mt-auto border-t border-white/20">
@@ -201,7 +194,7 @@ description: 'From school health engagements to medical fund management, see how
 					>
 				</div>
 				<a
-					href="{{ '/stories/jankey-njie-story/' | url }}"
+					href="{{ '/stories/jankey-njie-story/' | url() }}"
 					class="absolute inset-0 z-10"
 				></a>
 			</article>
@@ -212,7 +205,7 @@ description: 'From school health engagements to medical fund management, see how
 				<div class="flex justify-between gap-4 mb-6">
 					<div class="flex-1">
 						<h3
-							class="text-2xl font-black uppercase tracking-tighter leading-[0.9] mb-4 text-[#001F3F]"
+							class="text-2xl font-black uppercase tracking-tighter leading-[0.9] mb-4 text-slate-900"
 						>
 							Emotional Support & Advocacy
 						</h3>
@@ -227,42 +220,40 @@ description: 'From school health engagements to medical fund management, see how
 					<div
 						class="w-24 h-24 overflow-hidden shadow-md rounded-2xl shrink-0"
 					>
-						<img
-							src="{{ '/assets/img/what-we-do/emotional-support.jpeg' | url }}"
-							alt="Advocacy"
-							class="object-cover w-full h-full"
-						/>
+						{% image { src:
+						"/assets/img/what-we-do/emotional-support.jpeg", alt:
+						"Advocacy", class: "object-cover w-full h-full" } %}
 					</div>
 				</div>
 				<div class="pt-6 mt-auto border-t border-slate-100">
 					<p
-						class="text-[17px] font-serif italic leading-snug mb-4 text-[#C2185B]"
+						class="text-[17px] font-serif italic leading-snug mb-4 text-warrior-dark"
 					>
 						"Behind every number is mother, sister, or a friend."
 					</p>
 					<span
-						class="block text-[10px] font-black uppercase tracking-[0.2em] text-[#001F3F] opacity-60"
+						class="block text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 opacity-60"
 						>— Adam Joof</span
 					>
 				</div>
 				<a
-					href="{{ '/stories/adam-joof-story/' | url }}"
+					href="{{ '/stories/adam-joof-story/' | url() }}"
 					class="absolute inset-0 z-10"
 				></a>
 			</article>
 
 			<article
-				class="group relative flex flex-col p-8 rounded-[30px] bg-[#FFF0F5] transition-all duration-500 hover:-translate-y-2 hover:shadow-xl min-h-[420px]"
+				class="group relative flex flex-col p-8 rounded-[30px] bg-warrior-soft transition-all duration-500 hover:-translate-y-2 hover:shadow-xl min-h-[420px]"
 			>
 				<div class="flex justify-between gap-4 mb-6">
 					<div class="flex-1">
 						<h3
-							class="text-2xl font-black uppercase tracking-tighter leading-[0.9] mb-4 text-[#001F3F]"
+							class="text-2xl font-black uppercase tracking-tighter leading-[0.9] mb-4 text-slate-900"
 						>
 							Youth & School Engagement
 						</h3>
 						<p
-							class="text-[15px] leading-relaxed text-[#001F3F]/80 font-medium"
+							class="text-[15px] leading-relaxed text-slate-900/80 font-medium"
 						>
 							We engage with schools to foster a future generation
 							informed about health, removing the stigma of
@@ -272,26 +263,24 @@ description: 'From school health engagements to medical fund management, see how
 					<div
 						class="w-24 h-24 overflow-hidden shadow-md rounded-2xl shrink-0"
 					>
-						<img
-							src="{{ '/assets/img/what-we-do/st-john-group.jpeg' | url }}"
-							alt="Youth"
-							class="object-cover w-full h-full"
-						/>
+						{% image { src:
+						"/assets/img/what-we-do/st-john-group.jpeg", alt:
+						"Youth", class: "object-cover w-full h-full" } %}
 					</div>
 				</div>
-				<div class="mt-auto pt-6 border-t border-[#001F3F]/10">
+				<div class="pt-6 mt-auto border-t border-slate-900/10">
 					<p
-						class="text-[17px] font-serif italic leading-snug mb-4 text-[#C2185B]"
+						class="text-[17px] font-serif italic leading-snug mb-4 text-warrior-dark"
 					>
 						"...through it all I fought strong."
 					</p>
 					<span
-						class="block text-[10px] font-black uppercase tracking-[0.2em] text-[#001F3F] opacity-60"
+						class="block text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 opacity-60"
 						>— Marrie Louise Mamo</span
 					>
 				</div>
 				<a
-					href="{{ '/stories/marrie-louise-mamo-jatta-story/' | url }}"
+					href="{{ '/stories/marrie-louise-mamo-jatta-story/' | url() }}"
 					class="absolute inset-0 z-10"
 				></a>
 			</article>
@@ -299,7 +288,7 @@ description: 'From school health engagements to medical fund management, see how
 
 		<div class="pt-16 mt-24 text-center border-t border-slate-100">
 			<p
-				class="text-[12px] font-black uppercase tracking-[0.25em] text-[#001F3F] leading-loose max-w-4xl mx-auto"
+				class="text-[12px] font-black uppercase tracking-[0.25em] text-slate-900 leading-loose max-w-4xl mx-auto"
 			>
 				OUR VISION:
 				<span class="italic text-slate-500"

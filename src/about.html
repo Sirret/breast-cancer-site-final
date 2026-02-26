@@ -5,21 +5,8 @@ permalink: /about/
 description: 'Founded by survivors and social workers, BCW Gambia is a registered non-profit (2025/C25004) dedicated to removing the stigma of cancer through education and advocacy.'
 ---
 
-<style>
-	/* Slightly decreasing header/nav height footprint */
-	nav {
-		padding-top: 0.5rem !important;
-		padding-bottom: 0.5rem !important;
-	}
-	.nav-logo {
-		height: 2.5rem !important;
-	}
-</style>
-
-<!-- SECTION 1: THE STORY -->
 <section class="pt-24 pb-20 overflow-hidden bg-white">
 	<div class="px-6 mx-auto max-w-7xl">
-		<!-- Title Section: Inline and centered -->
 		<div class="mb-16">
 			<h1
 				class="font-serif font-bold leading-none tracking-tighter text-7xl md:text-8xl text-slate-900"
@@ -28,9 +15,7 @@ description: 'Founded by survivors and social workers, BCW Gambia is a registere
 			</h1>
 		</div>
 
-		<!--  Items-center "evens out" the vertical alignment between text and image -->
 		<div class="flex flex-col items-center gap-16 lg:flex-row">
-			<!-- Left Side -->
 			<div class="lg:w-1/2">
 				<p
 					class="max-w-xl font-serif text-2xl font-medium leading-tight md:text-3xl text-slate-600"
@@ -40,13 +25,12 @@ description: 'Founded by survivors and social workers, BCW Gambia is a registere
 				</p>
 			</div>
 
-			<!-- Right Side -->
 			<div class="relative w-full lg:w-1/2">
 				<div
 					class="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border-2 border-slate-100"
 				>
 					<img
-						src="{{ '/assets/img/groups/group-pic-one-short.jpg' | url }}"
+						src="{{ '/assets/img/groups/group-pic-one-short.jpg' | url() }}"
 						alt="The Warriors Team"
 						class="w-full h-auto"
 					/>
@@ -59,7 +43,6 @@ description: 'Founded by survivors and social workers, BCW Gambia is a registere
 	</div>
 </section>
 
-<!-- SECTION 2: MISSION & VISION -->
 <section class="py-24 text-white bg-slate-900">
 	<div class="px-6 mx-auto max-w-7xl">
 		<div class="grid grid-cols-1 gap-16 md:grid-cols-2">
@@ -99,7 +82,6 @@ description: 'Founded by survivors and social workers, BCW Gambia is a registere
 	</div>
 </section>
 
-<!-- SECTION 3: THE VISIONARIES -->
 <section
 	id="founders"
 	class="py-32 bg-warrior-soft/20"
@@ -120,15 +102,13 @@ description: 'Founded by survivors and social workers, BCW Gambia is a registere
 			</p>
 		</div>
 
-		<!--  Added mt-20 to create clear spacing below the title -->
 		<div class="grid grid-cols-1 gap-16 mt-20 md:grid-cols-2 lg:gap-24">
-			<!-- Amie Card -->
 			<div class="relative group">
 				<div
 					class="aspect-[21/9] rounded-[2rem] overflow-hidden shadow-2xl mb-8 border-2 border-white"
 				>
 					<img
-						src="{{ '/assets/img/pictures/amie-profile.jpg' | url }}"
+						src="{{ '/assets/img/pictures/amie-profile.jpg' | url() }}"
 						alt="Amie Corr"
 						class="object-cover w-full h-full transition-all duration-500 group-hover:scale-105"
 					/>
@@ -159,13 +139,12 @@ description: 'Founded by survivors and social workers, BCW Gambia is a registere
 				</div>
 			</div>
 
-			<!-- Tida Card -->
 			<div class="relative group lg:mt-24">
 				<div
 					class="aspect-[21/9] rounded-[2rem] overflow-hidden shadow-2xl mb-8 border-2 border-white"
 				>
 					<img
-						src="{{ '/assets/img/pictures/tida-profile.jpg' | url }}"
+						src="{{ '/assets/img/pictures/tida-profile.jpg' | url() }}"
 						alt="Tida Njie"
 						class="object-cover w-full h-full transition-all duration-500 group-hover:scale-105"
 					/>
