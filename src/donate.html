@@ -4,10 +4,14 @@ title: 'Support a Warrior: Fund Breast Cancer Treatment'
 description: 'Your donation directly funds medical checkups, awareness campaigns, and treatment for women in The Gambia. Securely contribute via PayPal, Bank Transfer, or Wave to save lives today.'
 ---
 
-<section class="min-h-screen py-12 pt-29 bg-warrior-soft/30">
+<section
+	class="min-h-screen py-12 pt-29 bg-warrior-soft/30"
+	aria-labelledby="donation-heading"
+>
 	<div class="max-w-4xl px-6 mx-auto">
 		<div class="mb-12 text-center">
 			<h1
+				id="donation-heading"
 				class="font-serif text-5xl font-bold leading-tight md:text-8xl text-slate-900"
 			>
 				Support a <br />
@@ -25,6 +29,7 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 				<span
 					class="pl-6 text-2xl font-black text-slate-300"
 					id="currency-symbol"
+					aria-hidden="true"
 					>$</span
 				>
 				<input
@@ -33,32 +38,50 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 					inputmode="decimal"
 					placeholder="0.00"
 					class="w-full px-4 py-4 text-2xl font-black bg-transparent outline-none no-spinner text-slate-900 placeholder:text-slate-200"
+					aria-label="Enter donation amount"
+					aria-describedby="supported-currencies"
 				/>
 			</div>
 			<p
+				id="supported-currencies"
 				class="text-center mt-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest"
 			>
 				PayPal (USD) • Wave/QMoney (GMD)
 			</p>
 		</div>
 
-		<div class="flex flex-wrap items-center justify-center gap-4 mb-8">
+		<div
+			class="flex flex-wrap items-center justify-center gap-4 mb-8"
+			role="tablist"
+			aria-label="Payment Methods"
+		>
 			<button
-				onclick="openTab(event, 'paypal-tab')"
-				id="defaultOpen"
-				class="method-pill active-pill-blue"
+				role="tab"
+				aria-selected="true"
+				aria-controls="paypal-tab"
+				id="tab-paypal"
+				data-tab="paypal-tab"
+				class="method-pill tab-trigger active-pill-blue"
 			>
 				International
 			</button>
 			<button
-				onclick="openTab(event, 'modem-tab')"
-				class="method-pill"
+				role="tab"
+				aria-selected="false"
+				aria-controls="modem-tab"
+				id="tab-modem"
+				data-tab="modem-tab"
+				class="method-pill tab-trigger"
 			>
 				Wave / QMoney
 			</button>
 			<button
-				onclick="openTab(event, 'bank-tab')"
-				class="method-pill"
+				role="tab"
+				aria-selected="false"
+				aria-controls="bank-tab"
+				id="tab-bank"
+				data-tab="bank-tab"
+				class="method-pill tab-trigger"
 			>
 				Bank Transfer
 			</button>
@@ -69,11 +92,14 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 		>
 			<div
 				id="paypal-tab"
+				role="tabpanel"
+				aria-labelledby="tab-paypal"
 				class="tab-block tab-content animate-fade-in"
 			>
 				<div class="max-w-sm mx-auto text-center">
 					<div
 						class="inline-flex items-center justify-center w-16 h-16 mb-6 text-3xl text-blue-600 shadow-inner rounded-2xl bg-blue-50"
+						aria-hidden="true"
 					>
 						🌍
 					</div>
@@ -94,11 +120,15 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 
 			<div
 				id="modem-tab"
+				role="tabpanel"
+				aria-labelledby="tab-modem"
+				hidden
 				class="tab-hidden tab-content animate-fade-in"
 			>
 				<div class="max-w-sm mx-auto text-center">
 					<div
 						class="inline-flex items-center justify-center w-16 h-16 mb-6 text-3xl shadow-inner rounded-2xl bg-warrior-soft text-warrior-pink"
+						aria-hidden="true"
 					>
 						🇬🇲
 					</div>
@@ -121,6 +151,9 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 
 			<div
 				id="bank-tab"
+				role="tabpanel"
+				aria-labelledby="tab-bank"
+				hidden
 				class="tab-hidden tab-content animate-fade-in"
 			>
 				<div class="max-w-md mx-auto">
@@ -148,8 +181,8 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 										>005201129562559052</span
 									>
 									<button
-										onclick="copyBBAN()"
 										id="copy-btn"
+										aria-label="Copy BBAN number to clipboard"
 										class="w-max px-6 py-3 bg-warrior-pink text-[11px] font-black uppercase rounded-xl text-white shadow-lg active:scale-90 transition-all"
 									>
 										Copy
@@ -169,7 +202,7 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 						</div>
 					</div>
 					<button
-						onclick="handleInstagramNotify()"
+						id="notify-insta-btn"
 						class="w-full py-5 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-2xl text-sm font-black uppercase tracking-[0.2em] shadow-xl hover:-translate-y-1 transition-all"
 					>
 						I've Sent It
@@ -182,6 +215,8 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 
 <div
 	id="toast"
+	role="alert"
+	aria-live="polite"
 	class="fixed top-10 left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 transform translate-y-[-20px] opacity-0 pointer-events-none"
 >
 	<div
@@ -190,6 +225,7 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 		<span
 			id="toast-icon"
 			class="text-xl"
+			aria-hidden="true"
 			>🎗️</span
 		>
 		<p
@@ -204,211 +240,10 @@ description: 'Your donation directly funds medical checkups, awareness campaigns
 	defer
 ></script>
 <script
-	src="https://cdn.modempay.com/sdk/v1/modempay.js"
+	src="https://api.modempay.com/js/v1.js"
 	defer
 ></script>
-
-<script defer>
-	let pageLoadTime = Date.now();
-
-	function showToast(message, icon = '🎗️') {
-		const toast = document.getElementById('toast');
-		const msgElem = document.getElementById('toast-message');
-		const iconElem = document.getElementById('toast-icon');
-		msgElem.innerText = message;
-		iconElem.innerText = icon;
-
-		toast.classList.remove(
-			'opacity-0',
-			'translate-y-[-20px]',
-			'pointer-events-none',
-		);
-		toast.classList.add('opacity-100', 'translate-y-0');
-
-		setTimeout(() => {
-			toast.classList.add(
-				'opacity-0',
-				'translate-y-[-20px]',
-				'pointer-events-none',
-			);
-			toast.classList.remove('opacity-100', 'translate-y-0');
-		}, 4000);
-	}
-
-	const getSuccessUrl = () => {
-		const path = window.location.pathname;
-		const base = path.substring(0, path.indexOf('/donate/'));
-		return window.location.origin + base + '/thank-you/';
-	};
-
-	function openTab(evt, tabName) {
-		// 1. Hide all content using forEach
-		const contents = document.querySelectorAll('.tab-content');
-		contents.forEach((c) => {
-			c.classList.remove('tab-block');
-			c.classList.add('tab-hidden');
-		});
-
-		// 2. Reset all buttons using forEach
-		const buttons = document.querySelectorAll('.method-pill');
-		buttons.forEach((b) =>
-			b.classList.remove(
-				'active-pill-blue',
-				'active-pill-pink',
-				'active-pill-slate',
-			),
-		);
-
-		// 3. Show target tab
-		const target = document.getElementById(tabName);
-		if (target.classList.contains('tab-hidden')) {
-			target.classList.replace('tab-hidden', 'tab-block');
-		} else {
-			target.classList.add('tab-block');
-		}
-
-		// 4. Update UI based on selection
-		const symbol = document.getElementById('currency-symbol');
-		if (tabName === 'paypal-tab') {
-			evt.currentTarget.classList.add('active-pill-blue');
-			symbol.innerText = '$';
-			// Force PayPal to check container visibility
-			if (window.paypal) initPayPal();
-		} else if (tabName === 'modem-tab') {
-			evt.currentTarget.classList.add('active-pill-pink');
-			symbol.innerText = 'D';
-		} else {
-			evt.currentTarget.classList.add('active-pill-slate');
-			symbol.innerText = 'D';
-		}
-	}
-
-	function copyBBAN() {
-		const bban = document.getElementById('bban').innerText;
-		navigator.clipboard.writeText(bban).then(() => {
-			const btn = document.getElementById('copy-btn');
-			btn.innerText = 'DONE!';
-			setTimeout(() => {
-				btn.innerText = 'COPY';
-			}, 2000);
-		});
-	}
-
-	function handleInstagramNotify() {
-		const rawAmount = document.getElementById('donation-input').value;
-		const cleanAmount = rawAmount.replace(/[^0-9.]/g, '');
-		const amountStr =
-			cleanAmount && parseFloat(cleanAmount) > 0
-				? `D${cleanAmount}`
-				: 'my donation';
-		const charityIG = '{{ site.socials.ig_name }}';
-		const message = encodeURIComponent(
-			`Hello! I have just sent ${amountStr} via bank transfer. 🎗️`,
-		);
-
-		window.open(`https://ig.me/m/${charityIG}?text=${message}`, '_blank');
-		showToast('Redirecting to Instagram...', '📱');
-		setTimeout(() => {
-			window.location.href = getSuccessUrl();
-		}, 1000);
-	}
-
-	function initPayPal() {
-		if (!window.paypal) {
-			setTimeout(initPayPal, 1000);
-			return;
-		}
-		const container = document.getElementById('paypal-button-container');
-		if (!container) return;
-
-		// Only clear and re-render if the container is empty or button is missing
-		if (container.children.length === 0) {
-			paypal
-				.Buttons({
-					onClick: (data, actions) => {
-						if (Date.now() - pageLoadTime < 3000) {
-							showToast('Please wait a moment...', '⏳');
-							return actions.reject();
-						}
-						return actions.resolve();
-					},
-					createOrder: (data, actions) => {
-						const amount = parseFloat(
-							document.getElementById('donation-input').value,
-						);
-						if (!amount || amount < 5) {
-							showToast(
-								'Please enter an amount of $5 or more',
-								'⚠️',
-							);
-							return actions.reject();
-						}
-						return actions.order.create({
-							purchase_units: [
-								{
-									description:
-										'Donation to Breast Cancer Warriors',
-									amount: { value: amount.toFixed(2) },
-								},
-							],
-						});
-					},
-					onApprove: (data, actions) =>
-						actions.order.capture().then(() => {
-							showToast('Success! Redirecting...', '✅');
-							window.location.href = getSuccessUrl();
-						}),
-					onCancel: () => {
-						showToast('Cancelled. Try Bank Transfer?', 'ℹ️');
-						document
-							.querySelector('[onclick*="bank-tab"]')
-							?.click();
-					},
-					onError: (err) => {
-						showToast('Connection error.', '❌');
-					},
-				})
-				.render('#paypal-button-container');
-		}
-	}
-
-	document.addEventListener('DOMContentLoaded', () => {
-		// Trigger initial tab
-		const defaultTab = document.getElementById('defaultOpen');
-		if (defaultTab) defaultTab.click();
-
-		initPayPal();
-
-		const modemBtn = document.getElementById('modempay-button');
-		modemBtn?.addEventListener('click', function () {
-			if (Date.now() - pageLoadTime < 3000) {
-				showToast('Please wait a moment...', '⏳');
-				return;
-			}
-			const amount = document.getElementById('donation-input').value;
-			if (!amount || amount < 50) {
-				showToast('Please enter an amount of D50 or more', '⚠️');
-				return;
-			}
-			this.disabled = true;
-			this.innerText = 'PROCESSING...';
-			if (window.ModemPay) {
-				ModemPay.checkout({
-					publicKey: '{{ keys.modempay }}',
-					amount: parseFloat(amount),
-					currency: 'GMD',
-					callback: (res) => {
-						if (res.status === 'success') {
-							showToast('Payment successful!', '✅');
-							window.location.href = getSuccessUrl();
-						} else {
-							this.disabled = false;
-							this.innerText = 'DONATE VIA MODEMPAY';
-							showToast('Payment incomplete.', '❌');
-						}
-					},
-				});
-			}
-		});
-	});
-</script>
+<script
+	src="{{ '/js/donate-logic.js' | url }}"
+	defer
+></script>
