@@ -8,110 +8,139 @@ pagination:
     alias: pagedStories
 ---
 
-<section class="pt-20 pb-16 bg-white border-b border-slate-50">
-	<div class="px-6 mx-auto text-center max-w-7xl">
-		<h1
-			class="mb-6 font-serif text-5xl font-bold leading-tight tracking-tighter md:text-6xl text-slate-900"
-		>
-			Survivor Stories
-		</h1>
-		<p
-			class="max-w-2xl mx-auto text-lg font-medium leading-relaxed text-slate-600"
-		>
-			Find hope and strength in the personal journeys of breast cancer
-			fighters and survivors across The Gambia.
-		</p>
-	</div>
-</section>
+---
 
-<section class="py-24 bg-slate-50/50">
-	<div class="px-6 mx-auto max-w-7xl">
-		<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-			{% for story in pagedStories %}
-			<article
-				class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full"
+<a
+	href="#main-content"
+	class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-warrior-pink focus:text-white focus:rounded-lg focus:font-bold"
+	>Skip to main content</a
+>
+
+<main id="main-content">
+	<section
+		class="pt-20 pb-16 bg-white border-b border-slate-50"
+		aria-labelledby="stories-heading"
+	>
+		<div class="px-6 mx-auto text-center max-w-7xl">
+			<h1
+				id="stories-heading"
+				class="mb-6 font-serif text-5xl font-bold leading-tight tracking-tighter md:text-6xl text-slate-900"
 			>
-				<div class="relative h-64 overflow-hidden bg-warrior-soft">
-					{% image { src: story.image, alt: story.title, class:
-					"object-cover w-full h-full transition-transform
-					duration-700 group-hover:scale-110" } %}
-					<div
-						class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"
-					></div>
-					<span
-						class="absolute top-6 right-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm"
-					>
-						Survivor Portrait
-					</span>
-				</div>
-
-				<div class="flex flex-col flex-grow p-10">
-					<h3
-						class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink"
-					>
-						{{ story.title }}
-					</h3>
-					<p
-						class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600"
-					>
-						"{{ story.excerpt | truncate(120)}}"
-					</p>
-					<div
-						class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link"
-					>
-						<a
-							href="{{ '/stories/' | url() }}{{ story.link | slugify () }}/"
-							class="after:absolute after:inset-0"
-						>
-							Read Full Story
-						</a>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="w-4 h-4 transition-transform group-hover/link:translate-x-1"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="3"
-								d="M9 5l7 7-7 7"
-							/>
-						</svg>
-					</div>
-				</div>
-			</article>
-			{% endfor %}
+				Survivor Stories
+			</h1>
+			<p
+				class="max-w-2xl mx-auto text-lg font-medium leading-relaxed text-slate-600"
+			>
+				Find hope and strength in the personal journeys of breast cancer
+				fighters and survivors across The Gambia.
+			</p>
 		</div>
+	</section>
 
-		{% if pagination.href.next or pagination.href.previous %}
-		<nav class="flex items-center justify-center gap-4 mt-16">
-			{% if pagination.href.previous %}
-			<a
-				href="{{ pagination.href.previous | url() }}"
-				class="px-6 py-3 text-[11px] font-black uppercase tracking-widest border border-slate-200 rounded-full hover:bg-warrior-pink hover:text-white hover:border-warrior-pink transition-all duration-300"
-			>
-				Previous
-			</a>
-			{% endif %}
-
+	<section class="py-24 bg-slate-50/50">
+		<div class="px-6 mx-auto max-w-7xl">
 			<div
-				class="text-[11px] font-black uppercase tracking-widest text-slate-400"
+				class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+				role="list"
+				aria-label="Survivor stories"
 			>
-				{# Nunjucks uses standard math symbols #} Page {{
-				pagination.pageNumber + 1 }} of {{ pagination.pages.length }}
+				{% for story in pagedStories %}
+				<article
+					role="listitem"
+					class="group relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full"
+				>
+					<div class="relative h-64 overflow-hidden bg-warrior-soft">
+						{% image { src: story.image, alt: story.title, class:
+						"object-cover w-full h-full transition-transform
+						duration-700 group-hover:scale-110" } %}
+						<div
+							class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"
+							aria-hidden="true"
+						></div>
+						<span
+							class="absolute top-6 right-6 bg-white/90 backdrop-blur-md text-warrior-dark text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-sm"
+							aria-hidden="true"
+						>
+							Survivor Portrait
+						</span>
+					</div>
+
+					<div class="flex flex-col flex-grow p-10">
+						<h3
+							class="mb-4 font-serif text-2xl font-bold transition-colors text-slate-900 group-hover:text-warrior-pink"
+						>
+							{{ story.title }}
+						</h3>
+						<p
+							class="flex-grow mb-8 font-serif italic leading-relaxed text-slate-600"
+						>
+							"{{ story.excerpt | truncate(120)}}"
+						</p>
+						<div
+							class="flex items-center gap-2 text-warrior-pink text-[11px] font-black uppercase tracking-widest group/link"
+						>
+							<a
+								href="{{ '/stories/' | url() }}{{ story.link | slugify () }}/"
+								class="after:absolute after:inset-0"
+							>
+								Read Full Story
+							</a>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="w-4 h-4 transition-transform group-hover/link:translate-x-1"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="3"
+									d="M9 5l7 7-7 7"
+								/>
+							</svg>
+						</div>
+					</div>
+				</article>
+				{% endfor %}
 			</div>
 
-			{% if pagination.href.next %}
-			<a
-				href="{{ pagination.href.next | url() }}"
-				class="px-6 py-3 text-[11px] font-black uppercase tracking-widest border border-slate-200 rounded-full hover:bg-warrior-pink hover:text-white hover:border-warrior-pink transition-all duration-300"
+			{% if pagination.href.next or pagination.href.previous %}
+			<nav
+				class="flex items-center justify-center gap-4 mt-16"
+				aria-label="Story pagination"
 			>
-				Next
-			</a>
+				{% if pagination.href.previous %}
+				<a
+					href="{{ pagination.href.previous | url() }}"
+					aria-label="Previous page of stories"
+					class="px-6 py-3 text-[11px] font-black uppercase tracking-widest border border-slate-200 rounded-full hover:bg-warrior-pink hover:text-white hover:border-warrior-pink transition-all duration-300"
+				>
+					Previous
+				</a>
+				{% endif %}
+
+				<div
+					aria-live="polite"
+					aria-atomic="true"
+					class="text-[11px] font-black uppercase tracking-widest text-slate-400"
+				>
+					{# Nunjucks uses standard math symbols #} Page {{
+					pagination.pageNumber + 1 }} of {{ pagination.pages.length
+					}}
+				</div>
+
+				{% if pagination.href.next %}
+				<a
+					href="{{ pagination.href.next | url() }}"
+					aria-label="Next page of stories"
+					class="px-6 py-3 text-[11px] font-black uppercase tracking-widest border border-slate-200 rounded-full hover:bg-warrior-pink hover:text-white hover:border-warrior-pink transition-all duration-300"
+				>
+					Next
+				</a>
+				{% endif %}
+			</nav>
 			{% endif %}
-		</nav>
-		{% endif %}
-	</div>
-</section>
+		</div>
+	</section>
+</main>

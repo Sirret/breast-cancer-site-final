@@ -32,20 +32,20 @@
 </head>
 
 <body class="font-sans antialiased bg-white text-slate-900">
-
-    <nav class="fixed top-0 left-0 right-0 z-50 border-b nav-glass border-slate-100">
+    <!--Main navigation-->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b nav-glass border-slate-100" aria-label="Main navigation">
         <div class="flex items-center justify-between h-20 px-6 mx-auto max-w-7xl">
             
-            <a href="{{ '/' | url() }}" class="flex items-center group">
+            <a href="{{ '/' | url() }}" class="flex items-center group" aria-label="Breast Cancer Warriors Gambia — Home">
                 <img src="{{ '/assets/img/b-c-w-logo.png' | url() }}" alt="BCW Gambia Logo" class="nav-logo">
             </a>
 
-            <div class="items-center hidden gap-10 lg:flex">
-                <a href="{{ '/' | url() }}" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink">Home</a>
-                <a href="{{ '/about/' | url() }}" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink">About</a>
-                <a href="{{ '/stories/' | url() }}" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink">Stories</a>
-                <a href="{{ '/what-we-do/' | url() }}" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink">What we do</a>
-                <a href="{{ '/contact/' | url() }}" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink">Contact</a>
+            <div class="items-center hidden gap-10 lg:flex" role="list">
+                <a href="{{ '/' | url() }}" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink" role="listitem">Home</a>
+                <a href="{{ '/about/' | url() }}" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink" role="listitem">About</a>
+                <a href="{{ '/stories/' | url() }}" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink" role="listitem">Stories</a>
+                <a href="{{ '/what-we-do/' | url() }}" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink" role="listitem">What we do</a>
+                <a href="{{ '/contact/' | url() }}" class="text-[11px] font-black uppercase tracking-widest text-slate-600 hover:text-warrior-pink" role="listitem">Contact</a>
             </div>
 
             <div class="items-center hidden md:flex">
@@ -54,13 +54,13 @@
                 </a>
             </div>
 
-            <button id="menu-toggle" class="relative w-10 h-10 p-2 lg:hidden text-slate-900 focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
-                <div id="hamburger-icon" class="absolute inset-0 flex items-center justify-center transition-all duration-300">
+            <button id="menu-toggle" class="relative w-10 h-10 p-2 lg:hidden text-slate-900 focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                <div id="hamburger-icon" class="absolute inset-0 flex items-center justify-center transition-all duration-300" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
                 </div>
-                <div id="close-icon" class="absolute inset-0 flex items-center justify-center transition-all duration-300 scale-0 opacity-0">
+                <div id="close-icon" class="absolute inset-0 flex items-center justify-center transition-all duration-300 scale-0 opacity-0" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
@@ -68,22 +68,202 @@
             </button>
         </div>
 
-        <div id="mobile-menu" class="bg-white lg:hidden">
-            <div class="flex flex-col p-8 space-y-6 text-center">
-                <a href="{{ '/' | url() }}" class="text-sm font-black tracking-widest uppercase text-slate-600">Home</a>
-                <a href="{{ '/about/' | url() }}" class="text-sm font-black tracking-widest uppercase text-slate-600">About</a>
-                <a href="{{ '/stories/' | url() }}" class="text-sm font-black tracking-widest uppercase text-slate-600">Stories</a>
-                <a href="{{ '/what-we-do/' | url() }}" class="text-sm font-black tracking-widest uppercase text-slate-600">What We Do</a>
-                <a href="{{ '/contact/' | url() }}" class="text-sm font-black tracking-widest uppercase text-slate-600">Contact</a>
-                <a href="{{ '/donate/' | url() }}" class="bg-warrior-pink text-white py-4 rounded-full text-[10px] font-black uppercase tracking-widest">Donate Now</a>
-            </div>
-        </div>
     </nav>
+
+    <!-- Full-screen mobile menu overlay -->
+    <div id="mobile-menu"
+         class="fixed inset-0 z-40 flex-col bg-white lg:hidden"
+         role="dialog"
+         aria-modal="true"
+         aria-label="Mobile navigation menu"
+         style="display:none;">
+        <div class="h-20 shrink-0"></div>
+        <div class="flex flex-col items-center justify-center flex-1 gap-1 px-8 pb-12">
+            <a href="{{ '/' | url() }}"           class="mobile-nav-link">Home</a>
+            <a href="{{ '/about/' | url() }}"     class="mobile-nav-link">About</a>
+            <a href="{{ '/stories/' | url() }}"   class="mobile-nav-link">Stories</a>
+            <a href="{{ '/what-we-do/' | url() }}" class="mobile-nav-link">What We Do</a>
+            <a href="{{ '/contact/' | url() }}"   class="mobile-nav-link">Contact</a>
+            <a href="{{ '/donate/' | url() }}"
+               class="mt-6 bg-warrior-pink text-white w-full max-w-xs py-4 rounded-full text-[10px] font-black uppercase tracking-widest text-center shadow-lg shadow-warrior-pink/30">
+                Donate Now
+            </a>
+        </div>
+    </div>
 
     <main class="min-h-screen">
         {{ content | safe }}
     </main>
 
-    <script src="{{ '/js/navigation.js' | url() }}" defer></script>
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="text-white bg-slate-900" aria-labelledby="footer-heading">
+        <h2 id="footer-heading" class="sr-only">Site footer</h2>
+
+        <!-- Top decorative border -->
+        <div class="h-1 bg-gradient-to-r from-warrior-dark via-warrior-pink to-warrior-soft" aria-hidden="true"></div>
+
+        <!-- Main footer body -->
+        <div class="px-6 pt-10 pb-6 mx-auto max-w-7xl">
+
+            <div class="grid grid-cols-2 gap-8 lg:grid-cols-12 lg:gap-16">
+
+                <!-- Col 1: Brand -->
+                <div class="col-span-2 space-y-4 lg:col-span-4">
+                    <a href="{{ '/' | url() }}" aria-label="Breast Cancer Warriors Gambia — Home" class="inline-block">
+                        <img
+                            src="{{ '/assets/img/b-c-w-logo.png' | url() }}"
+                            alt="Breast Cancer Warriors Gambia logo"
+                            class="object-contain w-auto h-10 "
+                        />
+                    </a>
+                    
+                    <p class="max-w-xs text-sm font-medium leading-relaxed text-slate-300">
+                        Aiding and bringing hope to women with cancer in The Gambia.
+                        <span class="text-warrior-pink" aria-hidden="true"> ♥</span>
+                    </p>
+                    <!-- Social icons -->
+                    <div class="flex items-center gap-3" role="list" aria-label="Social media links">
+
+                        <!-- Instagram -->
+                        <a href="{{ site.socials.ig }}" target="_blank" rel="noopener noreferrer"
+                           aria-label="Follow us on Instagram (opens in new tab)"
+                           role="listitem"
+                           class="footer-social-btn">
+                            <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+
+                        <!-- TikTok -->
+                        <a href="{{ site.socials.tiktok }}" target="_blank" rel="noopener noreferrer"
+                           aria-label="Follow us on TikTok (opens in new tab)"
+                           role="listitem"
+                           class="footer-social-btn">
+                            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.9-.36-2.81-.12-1.1.3-2.03 1.13-2.32 2.21-.19.6-.2 1.25-.01 1.85.24 1.05.97 1.97 1.93 2.33.62.24 1.3.29 1.95.19.98-.15 1.85-.75 2.37-1.59.35-.55.54-1.2.56-1.85.02-3.15.01-6.3.01-9.45z"/>
+                            </svg>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a href="{{ site.socials.facebook }}" target="_blank" rel="noopener noreferrer"
+                           aria-label="Follow us on Facebook (opens in new tab)"
+                           role="listitem"
+                           class="footer-social-btn">
+                            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                            </svg>
+                        </a>
+
+                        <!-- WhatsApp Channel -->
+                        <a href="{{ site.socials.whatsapp_channel }}" target="_blank" rel="noopener noreferrer"
+                           aria-label="Join our WhatsApp channel (opens in new tab)"
+                           role="listitem"
+                           class="footer-social-btn">
+                            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:{{site.email}}" aria-label="Email us at {{ site.email }}" role="listitem" class="footer-social-btn">
+                            <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <nav class="lg:col-span-2" aria-label="Footer navigation">
+                    <h3 class="footer-col-heading">Navigate</h3>
+                    <ul class="mt-4 space-y-2" role="list">
+                        <li><a href="{{ '/' | url() }}" class="footer-link">Home</a></li>
+                        <li><a href="{{ '/about/' | url() }}" class="footer-link">About Us</a></li>
+                        <li><a href="{{ '/stories/' | url() }}" class="footer-link">Stories</a></li>
+                        <li><a href="{{ '/what-we-do/' | url() }}" class="footer-link">What We Do</a></li>
+                        <li><a href="{{ '/contact/' | url() }}" class="footer-link">Contact</a></li>
+                        <li><a href="{{ '/donate/' | url() }}" class="font-black footer-link text-warrior-pink">Donate Now</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Col 3: Contact -->
+                <div class="lg:col-span-3">
+                    <h3 class="footer-col-heading">Get In Touch</h3>
+                    <ul class="mt-4 space-y-3" role="list">
+                        <li role="listitem">
+                            <a href="mailto:{{site.email}}" class="flex items-start gap-3 footer-link">
+                                <svg aria-hidden="true" class="w-4 h-4 mt-0.5 shrink-0 text-warrior-pink" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                <span>{{ site.email }}</span>
+                            </a>
+                        </li>
+                        <li role="listitem">
+                            <a href="tel:{{ site.phone.primary }}" class="flex items-start gap-3 footer-link">
+                                <svg aria-hidden="true" class="w-4 h-4 mt-0.5 shrink-0 text-warrior-pink" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                                <span>{{ site.phone.primary }}</span>
+                            </a>
+                        </li>
+                        <li role="listitem">
+                            <a href="tel:{{ site.phone.secondary }}" class="flex items-start gap-3 footer-link">
+                                <svg aria-hidden="true" class="w-4 h-4 mt-0.5 shrink-0 text-warrior-pink" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                                <span>{{ site.phone.secondary }}</span>
+                            </a>
+                        </li>
+                        <li role="listitem" class="flex items-start gap-3 text-sm font-medium text-slate-400">
+                            <svg aria-hidden="true" class="w-4 h-4 mt-0.5 shrink-0 text-warrior-pink" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <address class="not-italic leading-snug">{{ site.address }}</address>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Legal -->
+                <div class="lg:col-span-3">
+                    <h3 class="footer-col-heading">Legal</h3>
+                    <ul class="mt-4 space-y-2" role="list">
+                        <li><a href="{{ '/privacy-policy/' | url() }}" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="{{ '/terms-of-use/' | url() }}" class="footer-link">Terms of Use</a></li>
+                    </ul>
+                    <div class="p-4 mt-5 space-y-1 border rounded-2xl border-white/10 bg-white/5">
+                        <p class="text-[10px] font-black uppercase tracking-widest text-warrior-pink">Registered Charity</p>
+                        <p class="text-sm font-bold leading-snug text-white">{{site.name}}</p>
+                        <p class="text-xs font-medium text-slate-400">Registered in The Gambia</p>
+                        <p class="text-xs font-medium text-slate-400">Reg No:{{site.registration}}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="border-t border-white/10">
+            <div class="flex flex-col items-center justify-between gap-2 px-6 py-4 mx-auto max-w-7xl md:flex-row">
+                <p class="text-xs font-medium text-center text-slate-500 md:text-left">
+                    &copy; 2025 {{site.name}}
+                    <span class="mx-2 text-slate-700" aria-hidden="true">|</span>
+                    {{site.registration}}
+                </p>
+                <p class="text-xs font-medium text-center text-slate-600 md:text-right">
+                    Made with
+                    <span class="text-warrior-pink" aria-hidden="true">♥</span>
+                    <span class="sr-only">love</span>
+                    for the warriors of The Gambia
+                </p>
+            </div>
+        </div>
+
+    </footer>
+    <!-- =================== END FOOTER =================== -->
+
 </body>
 </html>

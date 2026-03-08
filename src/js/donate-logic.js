@@ -1,5 +1,3 @@
-// js/donate-logic.js
-
 const STATE = {
 	pageLoadTime: Date.now(),
 	paypalRendered: false,
@@ -8,15 +6,12 @@ const STATE = {
 
 /**
  * TAB LOGIC
- * Handles switching between PayPal, ModemPay, and Bank Transfer
- * Updated with ARIA support and fixed ID targeting
  */
 function openTab(event, tabName) {
 	const contents = document.querySelectorAll('.tab-content');
 	contents.forEach((c) => {
 		c.classList.remove('tab-block');
 		c.classList.add('tab-hidden');
-		// Accessibility: Hide panels from screen readers
 		c.setAttribute('hidden', '');
 	});
 
@@ -27,7 +22,6 @@ function openTab(event, tabName) {
 			'active-pill-pink',
 			'active-pill-slate',
 		);
-		// Accessibility: Mark buttons as unselected
 		b.setAttribute('aria-selected', 'false');
 	});
 
@@ -39,8 +33,6 @@ function openTab(event, tabName) {
 
 	const symbol = document.getElementById('currency-symbol');
 	const currentBtn = event.currentTarget;
-
-	// Accessibility: Mark active button
 	currentBtn.setAttribute('aria-selected', 'true');
 
 	if (tabName === 'paypal-tab') {
@@ -107,12 +99,10 @@ function copyBBAN() {
  * PAYPAL INTEGRATION
  */
 function initPayPal() {
-	// If PayPal script isn't loaded yet, retry in 500ms
 	if (!window.paypal) {
 		setTimeout(initPayPal, 500);
 		return;
 	}
-
 	if (STATE.paypalRendered) return;
 
 	window.paypal
@@ -181,7 +171,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			);
 		});
 
-	// 3. ModemPay Logic
+	/**
+	 * MODEMPAY REDIRECT LOGIC
+	 * Replaced modal logic with direct link redirect to avoid CSP blocks.
+	 */
 	const modemBtn = document.getElementById('modempay-button');
 	modemBtn?.addEventListener('click', function () {
 		const amount =
@@ -192,58 +185,24 @@ document.addEventListener('DOMContentLoaded', () => {
 			return;
 		}
 
-		if (typeof window.ModemPayCheckout !== 'function') {
-			showToast('Payment system loading...', '⏳');
-			return;
-		}
-
+		// Change button state to show progress
 		const originalText = this.innerHTML;
 		this.disabled = true;
-		this.innerHTML = `<span class="inline-block animate-spin mr-2" aria-hidden="true">🌀</span> SECURING...`;
+		this.innerHTML = `<span class="inline-block animate-spin mr-2" aria-hidden="true">🌀</span> REDIRECTING...`;
 
-		STATE.modemPayTimeout = setTimeout(() => {
-			if (this.disabled) {
-				this.disabled = false;
-				this.innerHTML = originalText;
-			}
-		}, 30000);
+		// MODEMPAY REDIRECT
+		// We use your test link. Note: If you want to pass the dynamic 'amount',
+		// you would usually append it as a query parameter if ModemPay supports it,
+		// otherwise, this link takes them to the set payment page.
+		const testLink =
+			'https://test.checkout.modempay.com/donate/abdc65af7ecb14088ded3422057d20ca2fe936f2d76aee8adff69dcdcf975623';
 
-		try {
-			const modal = ModemPayCheckout({
-				amount: amount,
-				public_key:
-					'pk_test_bc03965d81b422862f1e9cc9547ab84f9cf9eb1100d49efe07359f8b10cea2e3',
-				currency: 'GMD',
-				payment_methods: 'wallet',
-				callback: (transaction) => {
-					clearTimeout(STATE.modemPayTimeout);
-					if (transaction.status === 'success') {
-						showToast('Thank you!', '✅');
-						window.location.href = getSuccessUrl();
-					} else {
-						this.disabled = false;
-						this.innerHTML = originalText;
-						showToast('Payment failed.', '❌');
-					}
-				},
-				onClose: () => {
-					clearTimeout(STATE.modemPayTimeout);
-					this.disabled = false;
-					this.innerHTML = originalText;
-				},
-			});
-
-			if (modal && typeof modal.show === 'function') {
-				modal.show();
-			}
-		} catch (e) {
-			console.error('ModemPay Error:', e);
-			this.disabled = false;
-			this.innerHTML = originalText;
-			showToast('Error opening payment', '❌');
-		}
+		// Small delay so the user sees the "Redirecting" state
+		setTimeout(() => {
+			window.location.href = testLink;
+		}, 800);
 	});
 
-	// FIX: Default view now targets the correct ID
+	// Default view
 	document.getElementById('tab-paypal')?.click();
 });

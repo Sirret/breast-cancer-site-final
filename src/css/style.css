@@ -111,21 +111,76 @@
 	}
 }
 
-/* Mobile Menu Logic */
+/* Mobile Menu — full-screen overlay */
 #mobile-menu {
-	transition: all 0.3s ease-in-out;
-	max-height: 0;
-	overflow: hidden;
-	background: white;
+	transition:
+		opacity 0.25s ease,
+		transform 0.25s ease;
+	opacity: 0;
+	transform: translateY(-8px);
+	pointer-events: none;
 }
 
 #mobile-menu.active {
-	max-height: 500px;
-	border-bottom: 1px solid #f1f5f9;
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
+}
+
+@layer components {
+	.mobile-nav-link {
+		@apply w-full py-3 text-lg font-black tracking-widest text-center uppercase transition-colors duration-200 border-b text-slate-700 hover:text-warrior-pink border-slate-100;
+	}
 }
 
 @media (min-width: 768px) {
 	.nav-logo {
 		height: 60px !important;
+	}
+}
+
+/* Screen-reader only utility (complements Tailwind's sr-only) */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+.sr-only.focus\:not-sr-only:focus,
+.focus\:not-sr-only:focus {
+	position: absolute;
+	width: auto;
+	height: auto;
+	padding: revert;
+	margin: revert;
+	overflow: visible;
+	clip: auto;
+	white-space: normal;
+}
+
+/* Visible focus ring for keyboard navigation */
+:focus-visible {
+	outline: 3px solid #ec4899;
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+/* ===================== FOOTER COMPONENTS ===================== */
+@layer components {
+	.footer-col-heading {
+		@apply text-[10px] font-black uppercase tracking-[0.25em] text-warrior-pink;
+	}
+
+	.footer-link {
+		@apply text-sm font-medium transition-colors duration-200 text-slate-400 hover:text-white;
+	}
+
+	.footer-social-btn {
+		@apply flex items-center justify-center w-10 h-10 transition-all duration-200 border rounded-xl bg-white/5 border-white/10 text-slate-400 hover:bg-warrior-pink hover:border-warrior-pink hover:text-white;
 	}
 }
